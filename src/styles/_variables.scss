@@ -1,0 +1,40 @@
+// Colors
+$primary-color: #000000;
+$secondary-color: #ffffff;
+$primary-white: #fff;
+$primary-black: #000;
+
+$primary-orange: #e57207;
+$primary-red: #dc143c;
+$primary-green: #07e507;
+$primary-blue: #0707e5;
+$primary-purple: #e507e5;
+$primary-yellow: #e5e507;
+$primary-gray: #666;
+$primary-dark-gray: #333;
+$primary-light-gray: #ccc;
+
+$primary-dark: #c26006;
+$success-color: #10b981;
+$warning-color: #f59e0b;
+$error-color: #ef4444;
+$background-color: #f8fafc;
+$surface-color: #ffffff;
+$text-primary: #1e293b;
+$text-secondary: #64748b;
+$border-color: #e2e8f0;
+
+// Shadows
+$shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+$shadow-md:
+  0 4px 6px -1px rgb(0 0 0 / 0.1),
+  0 2px 4px -2px rgb(0 0 0 / 0.1);
+$shadow-lg:
+  0 10px 15px -3px rgb(0 0 0 / 0.1),
+  0 4px 6px -4px rgb(0 0 0 / 0.1);
+
+// Breakpoints
+$mobile: 640px;
+$tablet: 768px;
+$desktop: 1024px;
+$wide: 1280px;
