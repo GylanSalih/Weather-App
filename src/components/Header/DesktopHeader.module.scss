@@ -1,0 +1,79 @@
+.headerContainer {
+  width: 100%;
+  backdrop-filter: saturate(180%) blur(8px);
+  background-color: color-mix(in oklab, var(--background), transparent 20%);
+  border-bottom: 1px solid var(--border);
+  /* no transitions on mode toggle */
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.darkMode .headerContainer {}
+
+.header {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 8px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* no transitions on container */
+
+  .logo {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    /* no transitions */
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    .logoImg {
+      height: 40px;
+      width: auto;
+      position: static;
+      margin: 0;
+    }
+  }
+
+  .menu {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    
+    .menuButton {
+      text-decoration: none;
+      color: var(--foreground);
+      font-weight: 500;
+      padding: 0.35rem 0.7rem;
+      border-radius: var(--radius);
+      /* no transitions */
+
+      &:hover {
+        background-color: color-mix(in oklab, var(--muted), var(--foreground) 4%);
+        color: var(--foreground);
+      }
+
+      &.active {
+        background-color: var(--muted);
+        color: var(--primary-foreground);
+      }
+    }
+  }
+}
+
+.darkMode .header {}
+
+// Responsive design
+@media (max-width: 640px) {
+  .header {
+    padding: 1rem;
+    gap: 1rem;
+
+    .menu {
+      gap: 1rem;
+    }
+  }
+}

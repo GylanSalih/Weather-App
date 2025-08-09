@@ -13,7 +13,7 @@
     "type-check": "tsc --noEmit",
     "test": "jest",
     "test:watch": "jest --watch",
-    "generate-css-types": "typed-scss-modules src --watch"
+    "generate-css-types": "echo 'CSS Modules work without typed-scss-modules!'"
   },
   "keywords": [
     "typescript",
@@ -37,6 +37,7 @@
     "@typescript-eslint/eslint-plugin": "^6.13.0",
     "@typescript-eslint/parser": "^6.13.0",
     "@vitejs/plugin-react": "^4.2.1",
+    "concurrently": "^8.2.2",
     "eslint": "^8.54.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.0",
@@ -46,7 +47,6 @@
     "jest": "^29.7.0",
     "prettier": "^3.1.0",
     "ts-jest": "^29.1.1",
-    "typed-scss-modules": "^1.8.4",
     "typescript": "^5.9.2",
     "vite": "^7.0.6"
   }
