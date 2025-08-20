@@ -1,0 +1,152 @@
+// -------------------------------------------------------------
+// parent über alle 4 boxen
+// -------------------------------------------------------------
+
+// main Wrapper
+.airConditions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #1a202c 0%, #2d3748 50%, #4a5568 100%);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 
+    0 4px 6px -1px rgba(0, 0, 0, 0.2),
+    0 2px 4px -1px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.airConditions:hover {
+  transform: translateY(-1px);
+  box-shadow: 
+    0 6px 10px -2px rgba(0, 0, 0, 0.25),
+    0 3px 5px -1px rgba(0, 0, 0, 0.15);
+}
+
+// -------------------------------------------------------------
+
+// Bereich oben titel links und button rechts
+.titleAndButtonParent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-family: "Rubik-Medium", sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-style: normal;
+  color: #a0aec0;
+  text-align: left;
+  font-size: 14px;
+  line-height: 1.2;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+// button für mehr info
+.moreInfoButton {
+  font-family: "Rubik-Medium", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  text-align: center;
+  text-transform: uppercase;
+  color: #1a202c;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  background: linear-gradient(135deg, #ffc446 0%, #ffb347 100%);
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(255, 196, 70, 0.3);
+  margin: 0;
+}
+
+.moreInfoButton:hover {
+  background: linear-gradient(135deg, #ffb347 0%, #ff9f43 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(255, 196, 70, 0.4);
+}
+
+// -------------------------------------------------------------
+
+// parent für alle einzelnen Slots damit die zum Grid werden
+.conditionsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* Tablet responsive */
+@media screen and (max-width: 1024px) {
+  .conditionsGrid {
+    gap: 15px;
+  }
+  
+  .airConditions {
+    padding: 15px;
+  }
+  
+  .title {
+    font-size: 16px;
+    line-height: 22px;
+    margin-left: 15px;
+  }
+}
+
+/* Mobile responsive */
+@media screen and (max-width: 768px) {
+  .conditionsGrid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .airConditions {
+    padding: 12px;
+  }
+  
+  .title {
+    font-size: 14px;
+    line-height: 20px;
+    margin-left: 10px;
+  }
+  
+  .moreInfoButton {
+    font-size: 12px;
+    padding: 8px;
+  }
+}
+
+/* Small mobile responsive */
+@media screen and (max-width: 480px) {
+  .conditionsGrid {
+    gap: 10px;
+  }
+  
+  .airConditions {
+    padding: 10px;
+  }
+  
+  .titleAndButtonParent {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  
+  .moreInfoButton {
+    align-self: stretch;
+    text-align: center;
+  }
+}

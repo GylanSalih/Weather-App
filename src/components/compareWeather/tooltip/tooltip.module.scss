@@ -1,0 +1,182 @@
+@use '../../styles/variables' as *;
+
+.tooltipBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease;
+}
+
+.tooltip {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 200px;
+
+  background-color: $primary-white;
+  border-radius: 12px;
+  box-shadow: $shadow-lg;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow: hidden;
+  animation: slideIn 0.3s ease;
+  
+  &.top {
+    transform: translateY(-10px);
+  }
+  
+  &.bottom {
+    transform: translateY(10px);
+  }
+  
+  &.left {
+    transform: translateX(-10px);
+  }
+  
+  &.right {
+    transform: translateX(10px);
+  }
+}
+
+.tooltipContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.tooltipHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $spacing-md $spacing-lg;
+  border-bottom: 1px solid $border-color;
+  background-color: $background-color;
+  
+  h4 {
+    margin: 0;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-semibold;
+    color: $primary-text;
+  }
+}
+
+.closeButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background-color: transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  color: $primary-gray;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    background-color: rgba($primary-gray, 0.1);
+    color: $primary-text;
+  }
+  
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+.tooltipBody {
+  padding: $spacing-lg;
+  overflow-y: auto;
+  max-height: 60vh;
+  
+  // Scrollbar styling
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: $background-color;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: $primary-light-gray;
+    border-radius: 3px;
+    
+    &:hover {
+      background: $primary-gray;
+    }
+  }
+}
+
+// Animations
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+// Responsive design
+@media (max-width: $mobile) {
+  .tooltip {
+    max-width: 95vw;
+    margin: $spacing-md;
+  }
+  
+  .tooltipHeader {
+    padding: $spacing-sm $spacing-md;
+    
+    h4 {
+      font-size: $font-size-base;
+    }
+  }
+  
+  .tooltipBody {
+    padding: $spacing-md;
+  }
+} 
+
+
+
+// Tooltip
+.tooltipInfo {
+  padding: $spacing-sm;
+}
+
+.tooltipAddress,
+.tooltipWebsite {
+  color: black;
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+  margin-bottom: $spacing-xs;
+  font-size: $font-size-sm;
+
+  a {
+    color: $primary-orange;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

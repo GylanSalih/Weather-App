@@ -1,0 +1,25 @@
+@import '../../../styles/variables.scss';
+
+// Load More Button
+.loadMore {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $spacing-sm;
+    width: 100%;
+    background-color: $primary-white;
+    border: 2px solid $primary-orange;
+    color: $primary-orange;
+    border-radius: 8px;
+    padding: $spacing-md;
+    font-size: $font-size-base;
+    font-weight: $font-weight-medium;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  
+    &:hover {
+      background-color: $primary-orange;
+      color: $primary-white;
+      transform: translateY(-1px);
+    }
+  }

@@ -1,0 +1,28 @@
+@use '../../styles/variables' as *;
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: $spacing-lg;
+}
+
+// Header
+title {
+  text-align: center;
+  margin-bottom: $spacing-xl;
+  font-size: $font-size-4xl;
+  color: #ff0000;
+}
+
+.darkMode .title {
+  color: #ff0000;
+}
+
+
+
+
+
+
+
+
+

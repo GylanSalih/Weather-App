@@ -1,19 +1,10 @@
-# BV24 TypeScript React SCSS Project
+# Weather App React SCSS Project
 
 Ein sauberes TypeScript + React + SCSS-Projekt mit moderner Struktur.
 
 ## 🚀 Features
 
-- **TypeScript 5.9+** mit strikter Konfiguration
-- **React 18** mit modernen Hooks
-- **SCSS/Sass** mit moderner @use-Syntax
-- **Vite** für schnelle Entwicklung und Builds
-- **ESLint** für Code-Qualität
-- **Prettier** für konsistente Formatierung
-- **Lucide React** für moderne Icons
-- **Path Aliases** (`@/*` für `src/*`)
-- **Source Maps** für besseres Debugging
-- **Responsive Design** mit modernem UI
+-** Still in Progress
 
 ## 📦 Installation
 

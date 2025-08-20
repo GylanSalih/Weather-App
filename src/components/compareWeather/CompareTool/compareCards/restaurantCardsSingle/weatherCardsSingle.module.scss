@@ -1,0 +1,226 @@
+@import '../../../../styles/variables.scss';
+
+.compareTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-sm;
+}
+
+// Restaurant List
+.restaurantList {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+  margin-bottom: $spacing-xl;
+}
+
+.restaurantCard {
+  background-color: $primary-white;
+  border-radius: 12px;
+  padding: $spacing-lg;
+  box-shadow: $shadow-md;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+
+  &:hover {
+    box-shadow: $shadow-lg;
+    transform: translateY(-2px);
+  }
+
+  &.comparisonMode {
+    padding-left: $spacing-2xl;
+  }
+}
+
+.checkbox {
+  position: absolute;
+  top: $spacing-md;
+  left: $spacing-md;
+  width: 20px;
+  height: 20px;
+  accent-color: $primary-orange;
+}
+
+// Header Row
+.headerRow {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: $spacing-lg;
+  align-items: start;
+}
+
+.ratingName {
+  h3 {
+    margin: $spacing-xs 0;
+    font-size: $font-size-xl;
+    color: $primary-text;
+  }
+}
+
+.stars {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin-bottom: $spacing-xs;
+}
+
+.ratingText {
+  margin-left: $spacing-xs;
+  font-size: $font-size-sm;
+  color: $primary-text-secondary;
+}
+
+// Burger Types
+.burgerTypes {
+  display: flex;
+  flex-direction: row;
+  gap: $spacing-xs;
+
+  span {
+    font-size: $font-size-sm;
+    padding: $spacing-xs $spacing-sm;
+    border-radius: 4px;
+
+    &.available {
+      background-color: rgba($primary-green, 0.1);
+      color: $primary-green;
+    }
+
+    &.unavailable {
+      background-color: rgba($primary-red, 0.1);
+      color: $primary-red;
+    }
+  }
+}
+
+// Address
+.address {
+  text-align: right;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px;
+  gap: 20px;
+
+  p {
+    margin-bottom: $spacing-xs;
+    font-size: $font-size-sm;
+    color: $primary-text-secondary;
+  }
+}
+
+.addressIcon {
+  display: flex;
+  justify-content: right;
+  color: $primary-orange;
+}
+
+// wrapper um adresse anzeigen und chevron icon
+.mobileIconTextWrapper {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm; // sorgt für Abstand zwischen Text und Icon
+}
+
+.addressIcon {
+  display: flex;
+  align-items: center;
+}
+
+// Mobile Address
+.mobileAddress {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  padding: $spacing-sm;
+  background-color: $background-color;
+  border-radius: 6px;
+  margin-top: $spacing-md;
+  cursor: pointer;
+
+  @media (max-width: $mobile) {
+    display: flex;
+  }
+}
+
+.mobileAddressText {
+  font-size: $font-size-sm;
+  color: $primary-text-secondary;
+}
+
+.mobileAddressMapIcon,
+.mobileAddressChevronIcon {
+  color: $primary-orange;
+  transition: transform 0.2s ease;
+
+  &.expanded {
+    transform: rotate(180deg);
+  }
+}
+
+.mobileAddressDetails {
+  margin-top: $spacing-sm;
+  padding: $spacing-md;
+  background-color: $background-color;
+  border-radius: 6px;
+}
+
+.mobileAddressInfo {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+}
+
+.mobileAddressItem {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  font-size: $font-size-sm;
+
+  a {
+    color: $primary-orange;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+// Desktop Address
+.desktopAddress {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: $spacing-md;
+
+  @media (max-width: $mobile) {
+    display: none;
+  }
+}
+
+.desktopIconTextWrapper {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  padding: $spacing-sm $spacing-md;
+  background-color: $background-color;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: darken($background-color, 5%);
+  }
+}
+
+.desktopAddressText {
+  font-size: $font-size-sm;
+  color: $primary-text-secondary;
+}
+
+.desktopAddressIcon {
+  color: $primary-orange;
+}

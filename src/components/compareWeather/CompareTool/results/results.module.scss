@@ -1,0 +1,49 @@
+@import '../../../styles/variables.scss';
+
+
+// No Results
+.noResults {
+    text-align: center;
+    padding: $spacing-xl;
+    color: $primary-text-secondary;
+  
+    p {
+      font-size: $font-size-lg;
+    }
+  }
+
+
+
+// Results Header
+.resultsHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $spacing-lg;
+    padding: $spacing-md;
+    background-color: $background-color;
+    border-radius: 8px;
+  }
+  
+  .resultsInfo {
+    font-size: $font-size-sm;
+    color: $primary-text-secondary;
+  }
+  
+  .startComparisonBtn {
+    background-color: $primary-orange;
+    color: $primary-white;
+    border: none;
+    border-radius: 6px;
+    padding: $spacing-sm $spacing-md;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  
+    &:hover {
+      background-color: darken($primary-orange, 10%);
+      transform: translateY(-1px);
+    }
+  }
+  

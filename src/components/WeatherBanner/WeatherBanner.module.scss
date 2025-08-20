@@ -1,0 +1,200 @@
+// content des banners
+.bannerContent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contentRight {
+    display: flex;
+    flex-direction: row;
+    align-items: right;
+    justify-content: left;
+}
+
+.contentLeft {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin-left: 24px;
+    gap: 8px;
+}
+
+
+// banner
+.weatherBanner {
+    background: linear-gradient(135deg, #1a202c 0%, #2d3748 50%, #4a5568 100%);
+    border-radius: 16px;
+    box-shadow: 
+      0 4px 6px -1px rgba(0, 0, 0, 0.2),
+      0 2px 4px -1px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.weatherBanner:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+      0 8px 15px -3px rgba(0, 0, 0, 0.25),
+      0 4px 6px -2px rgba(0, 0, 0, 0.15);
+}
+
+// bild des banners
+.image {
+    width: 400px;
+    height: 400px;
+    margin-right: 24px;
+    display: flex;
+    object-fit: cover;
+    align-items: flex-end;
+    justify-content: flex-end;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+    transition: transform 0.3s ease;
+}
+
+.image:hover {
+    transform: scale(1.02);
+}
+
+/* Tablet responsive */
+@media screen and (max-width: 1024px) {
+    .image {
+        width: 300px;
+        height: 300px;
+        margin-right: 15px;
+    }
+    
+    .title {
+        font-size: 36px;
+        line-height: 40px;
+    }
+    
+    .temperature {
+        font-size: 48px;
+        line-height: 56px;
+        margin-top: 30px;
+    }
+    
+    .contentLeft {
+        margin-left: 20px;
+    }
+}
+
+/* Mobile responsive */
+@media screen and (max-width: 768px) {
+    .bannerContent {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .image {
+        width: 200px;
+        height: 200px;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    
+    .title {
+        font-size: 28px;
+        line-height: 32px;
+    }
+    
+    .temperature {
+        font-size: 40px;
+        line-height: 48px;
+        margin-top: 15px;
+    }
+    
+    .description {
+        font-size: 16px;
+        line-height: 20px;
+    }
+    
+    .contentLeft {
+        margin-left: 0;
+        align-items: center;
+        gap: 6px;
+    }
+    
+    .weatherBanner {
+        padding: 15px;
+    }
+}
+
+/* Small mobile responsive */
+@media screen and (max-width: 480px) {
+    .image {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .title {
+        font-size: 24px;
+        line-height: 28px;
+    }
+    
+    .temperature {
+        font-size: 32px;
+        line-height: 40px;
+    }
+    
+    .description {
+        font-size: 14px;
+        line-height: 18px;
+    }
+    
+    .weatherBanner {
+        padding: 10px;
+    }
+}
+
+// titel des banners
+.title {
+    font-size: 44px;
+    font-family: 'Rubik-Bold', sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 1.1;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 4px;
+}
+
+// beschreibung des banners
+.description {
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Rubik-Regular', sans-serif;
+    font-style: normal;
+    line-height: 1.4;
+    color: #a0aec0;
+    margin-bottom: 4px;
+}
+
+
+// temperatur des banners
+.temperature {
+    font-family: 'Rubik-Medium', sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color: #ffffff;
+    text-align: left;
+    font-size: 64px;
+    line-height: 1.1;
+    margin-top: 16px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.rain {
+    font-size: 14px;
+    font-family: 'Rubik-Regular', sans-serif;
+    color: #81c4f7;
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}

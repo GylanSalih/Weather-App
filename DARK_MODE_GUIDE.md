@@ -224,12 +224,7 @@ Globale Stile für alle Elemente:
   --border-color: #404040;
 }
 
-// Spezifische Elemente
-.darkMode input {
-  background-color: #2d2d2d;
-  border-color: #404040;
-  color: #ffffff;
-}
+
 
 .darkMode a {
   color: #ff6b00;

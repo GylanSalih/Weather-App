@@ -4,43 +4,99 @@
 
 /* Alle Fonts Lokal eingebunden */
 
-/* -------------------Arvo Font START--------------------------*/
+/* -------------------Inter Font START--------------------------*/
 
 
 @font-face {
-  font-family: "ArvoBold";
-  src: url("/src/fonts/Arvo/Arvo-Bold.ttf") format("truetype");
-  font-weight: 500; 
-  font-style: bold;
+  font-family: "Inter_ Regular";
+  src: url("/src/fonts/Inter/Inter_Regular.ttf") format("truetype");
+  font-weight: 400; 
+  font-style: normal;
 }
 
 @font-face {
-  font-family: "ArvoBoldItalic";
-  src: url("/src/fonts/Arvo/Arvo-BoldItalic.ttf") format("truetype");
+  font-family: "Inter_Medium";
+  src: url("/src/fonts/Inter/Inter_Medium.ttf") format("truetype");
   font-weight: 500;
-  font-style: italic;
+  font-style: normal;
 }
 
 @font-face {
-  font-family: "ArvoItalic";
-  src: url("/src/fonts/Arvo/Arvo-Italic.ttf") format("truetype");
-  font-weight: 400; 
-  font-style: italic;
+  font-family: "Inter_SemiBold";
+  src: url("/src/fonts/Inter/Inter_SemiBold.ttf") format("truetype");
+  font-weight: 600; 
+  font-style: normal;
 }
 
 @font-face {
-  font-family: "ArvoRegular";
-  src: url("/src/fonts/Arvo/Arvo-Bold.ttf") format("truetype");
-  font-weight: 400; 
+  font-family: "Inter_Light";
+  src: url("/src/fonts/Inter/Inter_Light.ttf") format("truetype");
+  font-weight: 300; 
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter_ExtraLight";
+  src: url("/src/fonts/Inter/Inter_ExtraLight.ttf") format("truetype");
+  font-weight: 200; 
   font-style: normal;
 }
 
 
-/* -------------------Source Sans Pro Font START--------------------------*/
+/* -------------------Rubik Font START--------------------------*/
 
 @font-face {
-  font-family: "SourceSanRegular";
-  src: url("/src/fonts/Source_Sans_Pro/SourceSansPro-Regular.ttf") format("truetype");
+  font-family: "Rubik-Regular";
+  src: url("/src/fonts/Rubik/Rubik-Regular.ttf") format("truetype");
   font-weight: 400; 
   font-style: normal;
 }
+
+@font-face {
+  font-family: "Rubik-Black";
+  src: url("/src/fonts/Rubik/Rubik-Black.ttf") format("truetype");
+  font-weight: 900; 
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Rubik-Bold";
+  src: url("/src/fonts/Rubik/Rubik-Bold.ttf") format("truetype");
+  font-weight: 700; 
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Rubik-ExtraBold";
+  src: url("/src/fonts/Rubik/Rubik-ExtraBold.ttf") format("truetype");
+  font-weight: 800; 
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Rubik-Light";
+  src: url("/src/fonts/Rubik/Rubik-Light.ttf") format("truetype");
+  font-weight: 300; 
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Rubik-Medium";
+  src: url("/src/fonts/Rubik/Rubik-Medium.ttf") format("truetype");
+  font-weight: 500; 
+}
+
+@font-face {
+  font-family: "Rubik-Regular";
+  src: url("/src/fonts/Rubik/Rubik-Regular.ttf") format("truetype");
+  font-weight: 400; 
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Rubik-SemiBold";
+  src: url("/src/fonts/Rubik/Rubik-SemiBold.ttf") format("truetype");
+  font-weight: 600; 
+  font-style: normal;
+}
+

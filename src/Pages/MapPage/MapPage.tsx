@@ -1,12 +1,12 @@
 import { ReactElement } from 'react';
-import styles from './PageTwo.module.scss';
+import styles from './MapsPage.module.scss';
 import { ArrowRight } from 'lucide-react';
 
-export const PageTwo = (): ReactElement => {
+export const MapsPage = (): ReactElement => {
   return (
     <div className="container page">
       <section className={styles.stack1}>
-        <h1>Page 2</h1>
+        <h1>Maps Page</h1>
         <p>
           Noch eine editierbare Seite mit vorgefertigten Stilen und Komponenten.
         </p>

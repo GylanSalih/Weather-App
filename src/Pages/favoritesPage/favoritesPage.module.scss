@@ -1,0 +1,501 @@
+@use '../../styles/variables' as *;
+/* Page Two uses only global classes: .container, .page, .stack, .row */
+
+
+.weatherFavorites {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #f8f9fa;
+  min-height: 100vh;
+  transition: all 0.3s ease;
+  
+  &.dark {
+    background: #000000;
+    color: white;
+    
+    .headerSection h1,
+    .headerSection p {
+      color: white;
+    }
+    
+    .searchInput {
+      background: #1a1a1a;
+      color: white;
+      border-color: #444;
+      
+      &:focus {
+        border-color: #4da6ff;
+      }
+    }
+    
+    .statCard {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+      
+      .statNumber {
+        color: white;
+      }
+      
+      .statLabel {
+        color: #e0e0e0;
+      }
+    }
+    
+    .favoriteCard {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+      
+      .cityInfo h3 {
+        color: white;
+      }
+      
+      .country {
+        color: #e0e0e0;
+      }
+      
+      .tempValue {
+        color: white;
+      }
+      
+      .description {
+        color: #e0e0e0;
+      }
+      
+      .detailItem span {
+        color: #e0e0e0;
+      }
+      
+      .lastUpdated span {
+        color: #e0e0e0;
+      }
+    }
+    
+    .weatherInfo {
+      background: #2d2d2d;
+      
+      .tempValue {
+        color: white;
+      }
+      
+      .description {
+        color: #e0e0e0;
+      }
+    }
+    
+    .weatherDetails {
+      background: #2d2d2d;
+      
+      .detailItem span {
+        color: #e0e0e0;
+      }
+    }
+    
+    .emptyState {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      
+      h3 {
+        color: white;
+      }
+      
+      p {
+        color: #e0e0e0;
+      }
+    }
+    
+    .actionButton {
+      background: #1a1a1a;
+      color: #e0e0e0;
+      border-color: #444;
+      
+      &:hover {
+        border-color: #4da6ff;
+        color: #4da6ff;
+      }
+    }
+  }
+}
+
+.headerSection {
+  text-align: center;
+  margin-bottom: 3rem;
+  
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    font-size: 1.1rem;
+    color: #666;
+  }
+}
+
+.searchSection {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  align-items: center;
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+.searchBar {
+  position: relative;
+  flex: 1;
+  
+  .searchIcon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+  }
+}
+
+.searchInput {
+  width: 100%;
+  padding: 1rem 1rem 1rem 3rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  font-size: 1rem;
+  background: white;
+  color: #333;
+  
+  &:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+}
+
+.addButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    background: #0056b3;
+    transform: translateY(-2px);
+  }
+}
+
+.statsSection {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.statCard {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+  
+  svg {
+    color: #007bff;
+    flex-shrink: 0;
+  }
+  
+  .statContent {
+    display: flex;
+    flex-direction: column;
+    
+    .statNumber {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      line-height: 1;
+    }
+    
+    .statLabel {
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 0.25rem;
+    }
+  }
+}
+
+.favoritesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.favoriteCard {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.cityInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  
+  svg {
+    color: #007bff;
+    flex-shrink: 0;
+  }
+  
+  h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0 0 0.25rem 0;
+  }
+  
+  .country {
+    font-size: 0.9rem;
+    color: #666;
+  }
+}
+
+.cardActions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.bookmarkButton,
+.editButton,
+.removeButton {
+  padding: 0.5rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  background: white;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    border-color: #007bff;
+    color: #007bff;
+  }
+  
+  &.bookmarked {
+    background: #ff6b6b;
+    border-color: #ff6b6b;
+    color: white;
+    
+    &:hover {
+      background: #ff5252;
+    }
+  }
+}
+
+.removeButton:hover {
+  border-color: #dc3545;
+  color: #dc3545;
+}
+
+.weatherInfo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.weatherIcon {
+  flex-shrink: 0;
+  
+  svg {
+    color: #007bff;
+  }
+}
+
+.temperature {
+  display: flex;
+  flex-direction: column;
+  
+  .tempValue {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    line-height: 1;
+  }
+  
+  .description {
+    font-size: 0.9rem;
+    color: #333;
+    margin-top: 0.25rem;
+    text-transform: capitalize;
+  }
+}
+
+.weatherDetails {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.detailItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: #333;
+  
+  svg {
+    color: #007bff;
+    flex-shrink: 0;
+  }
+}
+
+.lastUpdated {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: #666;
+  
+  svg {
+    color: #666;
+    flex-shrink: 0;
+  }
+}
+
+.emptyState {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+  
+  svg {
+    color: #ccc;
+    margin-bottom: 1rem;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #666;
+    margin-bottom: 0.5rem;
+  }
+  
+  p {
+    color: #999;
+    margin-bottom: 2rem;
+  }
+}
+
+.addFirstButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    background: #0056b3;
+    transform: translateY(-2px);
+  }
+}
+
+.quickActions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.actionButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  background: white;
+  color: #666;
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    border-color: #007bff;
+    color: #007bff;
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .weatherFavorites {
+    padding: 1rem;
+  }
+  
+  .favoritesGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .weatherDetails {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+  
+  .cardHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .cardActions {
+    align-self: flex-end;
+  }
+}
+
+

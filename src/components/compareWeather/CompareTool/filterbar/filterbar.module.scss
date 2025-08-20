@@ -1,0 +1,165 @@
+@import '../../../styles/variables.scss';
+
+
+.filtersSection {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: $spacing-lg;
+  box-shadow: $shadow-md;
+  margin-bottom: $spacing-lg;
+}
+
+.searchBox {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  border-radius: 8px;
+  padding: $spacing-sm $spacing-md;
+  margin-bottom: $spacing-md;
+
+  svg {
+    color: gray;
+    margin-right: $spacing-sm;
+  }
+}
+
+.searchInput {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: $font-size-base;
+  color: #ffffff;
+
+  &::placeholder {
+    color: #000000;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  // grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); // Ausgebelndet Grid mode
+  gap: $spacing-md;
+  justify-content: center;
+  align-items: stretch;
+  padding: 0px;
+  gap: 25px;
+}
+
+.filterGroup {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+
+  label {
+    font-weight: $font-weight-medium;
+    color: $primary-text;
+    font-size: $font-size-sm;
+  }
+}
+
+.select {
+  padding: $spacing-sm;
+  border: 1px solid $border-color;
+  border-radius: 6px;
+  background-color: $primary-white;
+  font-size: $font-size-base;
+  color: $primary-text;
+
+  &:focus {
+    outline: none;
+    border-color: $primary-orange;
+    box-shadow: 0 0 0 2px rgba($primary-orange, 0.1);
+  }
+}
+
+.burgerTypeFilters {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+
+  label {
+    font-weight: $font-weight-medium;
+    color: $primary-text;
+    font-size: $font-size-sm;
+  }
+}
+
+.checkboxGroup {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+  font-size: $font-size-sm;
+  color: $primary-text;
+  cursor: pointer;
+
+  input[type='checkbox'] {
+    width: 16px;
+    height: 16px;
+    accent-color: $primary-orange;
+  }
+
+  &:hover {
+    color: $primary-orange;
+  }
+}
+
+.clearBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-sm;
+  background-color: $primary-orange;
+  color: $primary-white;
+  border: none;
+  border-radius: 8px;
+  padding: $spacing-sm $spacing-md;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: $shadow-sm;
+
+  &:hover {
+    background-color: darken($primary-orange, 10%);
+    transform: translateY(-1px);
+    box-shadow: $shadow-md;
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba($primary-orange, 0.3);
+  }
+}
+
+// Responsive design
+@media (max-width: $mobile) {
+  .filtersSection {
+    padding: $spacing-md;
+  }
+
+  .filters {
+    grid-template-columns: 1fr;
+    gap: $spacing-sm;
+  }
+
+  .checkboxGroup {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}

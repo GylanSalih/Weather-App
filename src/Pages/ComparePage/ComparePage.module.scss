@@ -1,0 +1,134 @@
+@import '../../styles/variables';
+
+.weatherCompare {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #f8f9fa;
+  min-height: 100vh;
+  transition: all 0.3s ease;
+  
+  &.dark {
+    background: #000000;
+    color: white;
+    
+    .headerSection h1,
+    .headerSection p {
+      color: white;
+    }
+    
+    .featureCard {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+      
+      h3 {
+        color: white;
+      }
+      
+      p {
+        color: #e0e0e0;
+      }
+    }
+    
+    .comparisonSection {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    }
+  }
+}
+
+.headerSection {
+  text-align: center;
+  margin-bottom: 3rem;
+  
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    font-size: 1.1rem;
+    color: #666;
+  }
+}
+
+.featuresSection {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.featureCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  }
+  
+  svg {
+    color: #007bff;
+    flex-shrink: 0;
+    margin-top: 0.25rem;
+  }
+  
+  .featureContent {
+    flex: 1;
+    
+    h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin: 0 0 0.5rem 0;
+    }
+    
+    p {
+      font-size: 0.9rem;
+      color: #666;
+      line-height: 1.5;
+      margin: 0;
+    }
+  }
+}
+
+.comparisonSection {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .weatherCompare {
+    padding: 1rem;
+  }
+  
+  .featuresSection {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .featureCard {
+    padding: 1rem;
+  }
+  
+  .comparisonSection {
+    padding: 1rem;
+  }
+}
