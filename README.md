@@ -28,11 +28,21 @@
 <br />
 <div align="center">
   <a href="https://github.com/GylanSalih/Weather-App">
-    <img src="docs/images/showcase1.png" alt="Weather App Preview" width="400" style="margin-right: 10px; display: inline-block;">
+    <img src="docs/images/showcase1.png" alt="Weather App Preview" width="300" style="margin-right: 10px; display: inline-block;">
   </a>
   <a href="https://github.com/GylanSalih/Weather-App">
-    <img src="docs/images/showcase2.png" alt="Weather App Preview 2" width="400" style="margin-left: 10px; display: inline-block;">
+    <img src="docs/images/showcase2.png" alt="Weather App Preview 2" width="300" style="margin-right: 10px; display: inline-block;">
   </a>
+  <a href="https://github.com/GylanSalih/Weather-App">
+    <img src="docs/images/showcase3.png" alt="Weather App Preview 3" width="300" style="margin-right: 10px; display: inline-block;">
+  </a>
+  <a href="https://github.com/GylanSalih/Weather-App">
+    <img src="docs/images/showcase4.png" alt="Weather App Preview 4" width="300" style="margin-right: 10px; display: inline-block;">
+  </a>
+  <a href="https://github.com/GylanSalih/Weather-App">
+    <img src="docs/images/showcase5.png" alt="Weather App Preview 5" width="300" style="margin-left: 10px; display: inline-block;">
+  </a>
+</div>
 
 <h3 align="center">
  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Cloud%20with%20Rain.png" alt="Cloud with Rain" width="25" height="25" /> Weather App - Modern Weather Dashboard
@@ -59,7 +69,6 @@
   <ol>
     <li><a href="#about-the-project">About The Project</a></li>
     <li><a href="#features">Features</a></li>
-    <li><a href="#showcase">Showcase</a></li>
     <li><a href="#built-with">Built With</a></li>
     <li><a href="#getting-started">Getting Started</a></li>
     <li><a href="#contributing">Contributing</a></li>
@@ -115,24 +124,7 @@
   </a>
 </p>
 
-<h2 id="showcase"><span style="display: inline-flex; align-items: center;"><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" /> App Showcase</span></h2>
 
-Here are screenshots of the different pages and features of the Weather App:
-
-### 🌤️ Weather Page
-![Weather Page](docs/images/showcase1.png)
-
-### 🔍 Compare Tool
-![Compare Tool](docs/images/showcase2.png)
-
-### ⚙️ Settings Page
-![Settings Page](docs/images/showcase3.png)
-
-### ❤️ Favorites Page
-![Favorites Page](docs/images/showcase4.png)
-
-### 👤 User Page
-![User Page](docs/images/showcase5.png)
 
 <p align="right">
   <a href="#readme-top">
