@@ -1,235 +1,288 @@
-# Weather App React SCSS Project
+<a id="readme-top"></a>
 
-Ein sauberes TypeScript + React + SCSS-Projekt mit moderner Struktur.
+<div align="center">
 
-## 🚀 Features
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
 
--** Still in Progress
+</div>
 
-## 🖼️ Showcase
+<!-- Badges Shields -->
+[contributors-shield]: https://custom-icon-badges.demolab.com/github/contributors/GylanSalih/Weather-App?color=FF0000&logo=group&label=Contributors&logoColor=white&style=for-the-badge&labelColor=000000
+[forks-shield]: https://custom-icon-badges.demolab.com/github/forks/GylanSalih/Weather-App?color=FF0000&logo=repo-forked&label=Forks&logoColor=white&style=for-the-badge&labelColor=000000
+[stars-shield]: https://custom-icon-badges.demolab.com/github/stars/GylanSalih/Weather-App?color=FF0000&label=Stars&style=for-the-badge&logo=star&logoColor=white&labelColor=000000
+[issues-shield]: https://custom-icon-badges.demolab.com/github/issues/GylanSalih/Weather-App?color=FF0000&logo=issue-opened&label=Issues&logoColor=white&labelColor=000000&style=for-the-badge
+[license-shield]: https://custom-icon-badges.demolab.com/github/license/GylanSalih/Weather-App?color=FF0000&logo=law&label=License&logoColor=white&style=for-the-badge&labelColor=000000
 
-Hier sind Screenshots der verschiedenen Seiten der Wetter-App:
+<!-- Badges Links -->
+[contributors-url]: https://github.com/GylanSalih/Weather-App/graphs/contributors
+[forks-url]: https://github.com/GylanSalih/Weather-App/network/members
+[stars-url]: https://github.com/GylanSalih/Weather-App/stargazers
+[issues-url]: https://github.com/GylanSalih/Weather-App/issues
+[license-url]: https://github.com/GylanSalih/Weather-App/blob/main/LICENSE
 
-### Weather Page
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/GylanSalih/Weather-App">
+    <img src="docs/images/showcase1.png" alt="Weather App Preview" width="400" style="margin-right: 10px; display: inline-block;">
+  </a>
+  <a href="https://github.com/GylanSalih/Weather-App">
+    <img src="docs/images/showcase2.png" alt="Weather App Preview 2" width="400" style="margin-left: 10px; display: inline-block;">
+  </a>
+
+<h3 align="center">
+ <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Cloud%20with%20Rain.png" alt="Cloud with Rain" width="25" height="25" /> Weather App - Modern Weather Dashboard
+</h3>
+
+<p align="center">
+   Get real-time weather information for any city worldwide! A beautiful, responsive weather application built with React & TypeScript <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Rocket.png" alt="Rocket" width="25" height="25" />
+    <br />
+    <br />
+    <a href="#getting-started"><strong>Get Started »</strong></a>
+    <br />
+    <br />
+    <a href="#demo">View Demo</a>
+    ·
+    <a href="https://github.com/GylanSalih/Weather-App/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
+    ·
+    <a href="https://github.com/GylanSalih/Weather-App/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+</p>
+</div>
+
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" />Table of Contents</summary>
+  <ol>
+    <li><a href="#about-the-project">About The Project</a></li>
+    <li><a href="#features">Features</a></li>
+    <li><a href="#showcase">Showcase</a></li>
+    <li><a href="#built-with">Built With</a></li>
+    <li><a href="#getting-started">Getting Started</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</details>
+
+<h2 id="about-the-project"><span style="display: inline-flex; align-items: center;"><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" /> About The Project</span></h2>
+
+<span>
+  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/People%20with%20professions/Man%20Technologist%20Medium%20Skin%20Tone.png" alt="Developer" width="25" height="25" />
+  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Red%20Heart.png" alt="Red Heart" width="25" height="25" />
+**Mission:** Weather App is a modern, responsive weather dashboard that provides real-time weather information for cities worldwide. Built with cutting-edge web technologies, it offers an intuitive user experience with beautiful visualizations and comprehensive weather data.
+</span>
+
+&nbsp;
+
+<h2 id="features"><span style="display: inline-flex; align-items: center;"><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" /> Features</span></h2>
+
+### 🌤️ Core Weather Features
+- **Real-time Weather Data** from OpenWeatherMap API
+- **City Search** with autocomplete functionality
+- **7-Day Forecast** with detailed weather predictions
+- **Current Conditions** including temperature, humidity, pressure
+- **Wind & Visibility** information for outdoor activities
+- **Weather Icons** representing current conditions
+
+### 🎯 User Experience
+- **City Comparison Tool** - Compare weather in up to 3 cities
+- **Favorites System** - Save your favorite cities for quick access
+- **Dark Mode** - Beautiful dark theme for comfortable viewing
+- **Responsive Design** - Works perfectly on all devices
+- **Local Storage** - Your preferences are saved locally
+
+### 🛠️ Developer Experience
+- **TypeScript** for type safety and better development
+- **SCSS Modules** for maintainable and scalable styling
+- **React Hooks** for modern state management
+- **Context API** for global state management
+- **Custom Hooks** for reusable logic
+
+### 🎨 User Interface
+- **Modern UI Design** with smooth animations
+- **Lucide Icons** for consistent iconography
+- **Custom Weather Icons** for different conditions
+- **Responsive Grid Layout** for optimal viewing
+- **Beautiful Color Schemes** for light and dark modes
+
+<p align="right">
+  <a href="#readme-top">
+<img src="https://custom-icon-badges.demolab.com/badge/-Back%20to%20top-000000?style=for-the-badge&logo=upptime&logoColor=ffffff&labelColor=FF0000" alt="Back to top">
+  </a>
+</p>
+
+<h2 id="showcase"><span style="display: inline-flex; align-items: center;"><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" /> App Showcase</span></h2>
+
+Here are screenshots of the different pages and features of the Weather App:
+
+### 🌤️ Weather Page
 ![Weather Page](docs/images/showcase1.png)
 
-### Compare Tool
+### 🔍 Compare Tool
 ![Compare Tool](docs/images/showcase2.png)
 
-### Settings Page
+### ⚙️ Settings Page
 ![Settings Page](docs/images/showcase3.png)
 
-### Favorites Page
+### ❤️ Favorites Page
 ![Favorites Page](docs/images/showcase4.png)
 
-### User Page
+### 👤 User Page
 ![User Page](docs/images/showcase5.png)
 
-## 📦 Installation
+<p align="right">
+  <a href="#readme-top">
+<img src="https://custom-icon-badges.demolab.com/badge/-Back%20to%20top-000000?style=for-the-badge&logo=upptime&logoColor=ffffff&labelColor=FF0000" alt="Back to top">
+  </a>
+</p>
+
+<h2 id="built-with"><span style="display: inline-flex; align-items: center;"><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" /> Built With</span></h2>
+
+<div align="left">
+
+<ul>
+  <li>
+    <img alt="React Badge" title="React 18" src="https://custom-icon-badges.demolab.com/badge/-React%2018-000000?style=for-the-badge&logo=react&logoColor=ffffff&labelColor=FF0000">
+  </li>
+  <li>
+    <img alt="TypeScript Badge" title="TypeScript" src="https://custom-icon-badges.demolab.com/badge/-TypeScript-000000?style=for-the-badge&logo=typescript&logoColor=ffffff&labelColor=FF0000">
+  </li>
+  <li>
+    <img alt="Sass Badge" title="SCSS Modules" src="https://custom-icon-badges.demolab.com/badge/-SCSS%20Modules-000000?style=for-the-badge&logo=sass&logoColor=ffffff&labelColor=FF0000">
+  </li>
+  <li>
+    <img alt="Vite Badge" title="Vite" src="https://custom-icon-badges.demolab.com/badge/-Vite-000000?style=for-the-badge&logo=vite&logoColor=ffffff&labelColor=FF0000">
+  </li>
+  <li>
+    <img alt="Lucide Badge" title="Lucide Icons" src="https://custom-icon-badges.demolab.com/badge/-Lucide%20Icons-000000?style=for-the-badge&logo=feather&logoColor=ffffff&labelColor=FF0000">
+  </li>
+  <li>
+    <img alt="OpenWeather Badge" title="OpenWeather API" src="https://custom-icon-badges.demolab.com/badge/-OpenWeather%20API-000000?style=for-the-badge&logo=openweathermap&logoColor=ffffff&labelColor=FF0000">
+  </li>
+</ul>
+
+</div>
+
+<p align="right">
+  <a href="#readme-top">
+<img src="https://custom-icon-badges.demolab.com/badge/-Back%20to%20top-000000?style=for-the-badge&logo=upptime&logoColor=ffffff&labelColor=FF0000" alt="Back to top">
+  </a>
+</p>
+
+<h2 id="getting-started"><span style="display: inline-flex; align-items: center;"><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" /> Getting Started</span></h2>
+
+To get the Weather App running locally, you'll need <a href="https://git-scm.com">Git</a> and <a href="https://nodejs.org/en/download/">Node.js</a> (which includes <a href="http://npmjs.com">npm</a>) installed on your computer. Follow these steps:
+
+<ol>
+  <li><strong>Clone the repository:</strong>
+    <pre><code>git clone https://github.com/GylanSalih/Weather-App.git</code></pre>
+  </li>
+  <li><strong>Navigate into the repository:</strong>
+    <pre><code>cd Weather-App</code></pre>
+  </li>
+  <li><strong>Install dependencies:</strong>
+    <pre><code>npm install</code></pre>
+    <p>or</p>
+    <pre><code>yarn install</code></pre>
+  </li>
+  <li><strong>Start the development server:</strong>
+    <pre><code>npm run dev</code></pre>
+    <p>or</p>
+    <pre><code>yarn dev</code></pre>
+  </li>
+</ol>
+
+> **Note**
+> The application will be available at `http://localhost:5173`.
+
+### 📝 Available Scripts
 
 ```bash
-# Alle Dependencies installieren
-npm install
+npm run dev        # Start development server
+npm run build      # Create production build  
+npm run preview    # Preview production build
+npm run lint       # Run ESLint
+npm run test       # Run Jest tests
 ```
 
-## 🛠️ Verfügbare Scripts
+<p align="right">
+  <a href="#readme-top">
+<img src="https://custom-icon-badges.demolab.com/badge/-Back%20to%20top-000000?style=for-the-badge&logo=upptime&logoColor=ffffff&labelColor=FF0000" alt="Back to top">
+  </a>
+</p>
 
-### Development
+## <span style="display: inline-flex; align-items: center;"><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" /> Contributing</span>
 
-```bash
-# Development Server starten
-npm run dev
+We welcome contributions to **Weather App**! 🎉 Whether it's bug fixes, documentation improvements, or new features - your help is always appreciated.
 
-# Production Build
-npm run build
+### How to Contribute
 
-# Production Build preview
-npm run preview
-```
+1. **Fork the Repository**
+2. **Create a Feature Branch**
+   ```bash
+   git checkout -b feature/amazing-weather-feature
+   ```
+3. **Make Your Changes**
+4. **Run Quality Checks**
+   ```bash
+   npm run lint:fix
+   npm run type-check
+   npm test
+   ```
+5. **Commit Your Changes**
+   ```bash
+   git commit -m "Add: New weather visualization feature"
+   ```
+6. **Push to the Branch**
+   ```bash
+   git push origin feature/amazing-weather-feature
+   ```
+7. **Open a Pull Request**
 
-### Code Quality
+### Contribution Guidelines
 
-```bash
-# Code linten
-npm run lint
+- Follow the existing code style and structure
+- Write clear, descriptive commit messages  
+- Add tests for new features
+- Update documentation when necessary
+- Be respectful and constructive in discussions
 
-# Code linten und automatisch korrigieren
-npm run lint:fix
+<p align="right">
+  <a href="#readme-top">
+<img src="https://custom-icon-badges.demolab.com/badge/-Back%20to%20top-000000?style=for-the-badge&logo=upptime&logoColor=ffffff&labelColor=FF0000" alt="Back to top">
+  </a>
+</p>
 
-# Code formatieren
-npm run format
+## <span style="display: inline-flex; align-items: center;"><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" /> License</span>
 
-# Type-Checking ohne Kompilierung
-npm run type-check
-```
+Distributed under the MIT License. See `LICENSE` for more information.
 
-### Testing
+<p align="right">
+  <a href="#readme-top">
+<img src="https://custom-icon-badges.demolab.com/badge/-Back%20to%20top-000000?style=for-the-badge&logo=upptime&logoColor=ffffff&labelColor=FF0000" alt="Back to top">
+  </a>
+</p>
 
-```bash
-# Tests ausführen
-npm test
+## <span style="display: inline-flex; align-items: center;"><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" /> Contact</span>
 
-# Tests im Watch-Modus
-npm run test:watch
-```
+<div align="center">
+  <a href="https://github.com/gylansalih" target="_blank">
+    <img src="https://custom-icon-badges.demolab.com/badge/-GitHub-000000?style=for-the-badge&logo=github&logoColor=ffffff&labelColor=FF0000" alt="GitHub Badge">
+  </a>
+  <a href="https://www.gylansalih.com" target="_blank">
+    <img src="https://custom-icon-badges.demolab.com/badge/Website-000000?style=for-the-badge&logo=googlechrome&logoColor=ffffff&labelColor=FF0000" alt="Website Badge">
+  </a>
+  <br><br>
+  
+  <p><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Grinning%20Cat.png" alt="Grinning Cat" width="25" height="25" /> If you like this project, please consider starring it on GitHub! Your support is greatly appreciated! <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Rocket.png" alt="Rocket" width="25" height="25" /></p>
+</div>
 
-## 📁 Projektstruktur
-
-```
-src/
-├── main.tsx                    # React-Einstiegspunkt
-├── App.tsx                     # Haupt-App-Komponente
-├── App.scss                    # App-spezifische SCSS-Styles
-├── index.scss                  # Globale SCSS-Styles
-├── styles/                     # SCSS-Variablen und Mixins
-│   └── _variables.scss        # Farben, Schatten, Breakpoints
-└── components/                 # React-Komponenten
-    ├── Header.tsx             # Header-Komponente
-    ├── Footer.tsx             # Footer-Komponente
-    └── MainContent.tsx        # Hauptinhalt-Komponente
-```
-
-## 🔧 Konfiguration
-
-### TypeScript (`tsconfig.json`)
-
-- Target: ES2022
-- JSX: react-jsx
-- Strict Mode aktiviert
-- Source Maps für Debugging
-- Path Aliases für bessere Imports
-
-### Vite (`vite.config.ts`)
-
-- React-Plugin
-- SCSS-Unterstützung
-- Hot Module Replacement
-- Path Alias-Unterstützung
-- Optimierte Builds
-
-### SCSS (`src/styles/_variables.scss`)
-
-- Zentrale Variablen-Datei
-- Farben, Schatten, Breakpoints
-- Moderne @use-Syntax
-- Wiederverwendbare Werte
-
-### ESLint (`.eslintrc.js`)
-
-- TypeScript-spezifische Regeln
-- React-spezifische Regeln
-- Prettier-Integration
-- Strenge Code-Qualitätsstandards
-
-### Prettier (`.prettierrc`)
-
-- Konsistente Code-Formatierung
-- 80 Zeichen Zeilenbreite
-- Single Quotes
-- Semikolons aktiviert
-
-## 💡 Verwendung
-
-### Development starten
-
-```bash
-npm run dev
-```
-
-Die Anwendung ist dann unter `http://localhost:3000` verfügbar.
-
-### SCSS verwenden
-
-```scss
-// In einer Komponente
-@use 'styles/variables' as *;
-
-.my-component {
-  background-color: $primary-color;
-  box-shadow: $shadow-md;
-
-  &:hover {
-    background-color: $primary-dark;
-  }
-
-  @media (max-width: $mobile) {
-    padding: 1rem;
-  }
-}
-```
-
-### Beispiel-Komponente
-
-```typescript
-import React from 'react';
-import './MyComponent.scss';
-
-interface MyComponentProps {
-  title: string;
-}
-
-export const MyComponent: React.FC<MyComponentProps> = ({ title }) => {
-  return (
-    <div className="my-component">
-      <h2>{title}</h2>
-      <p>Dein Inhalt hier...</p>
-    </div>
-  );
-};
-```
-
-### Path Aliases
-
-```typescript
-// Statt: import { MyComponent } from '../../components/MyComponent';
-import { MyComponent } from '@/components/MyComponent';
-```
-
-## 🎨 SCSS Features
-
-- **Variablen-System** für konsistente Farben und Werte
-- **Verschachtelte Selektoren** für bessere Organisation
-- **Mixins** für wiederverwendbare Styles
-- **Responsive Breakpoints** als Variablen
-- **Moderne @use-Syntax** statt @import
-- **Automatische Kompilierung** durch Vite
-
-## 📝 Development Workflow
-
-1. **Development Server starten**: `npm run dev`
-2. **Code schreiben** in `src/components/`
-3. **SCSS-Styles** in `src/styles/` und Komponenten-Dateien
-4. **Code formatieren**: `npm run format`
-5. **Linting**: `npm run lint`
-6. **Production Build**: `npm run build`
-
-## 🔍 Debugging
-
-Das Projekt ist mit Source Maps konfiguriert, sodass du direkt im TypeScript- und SCSS-Code debuggen kannst.
-
-### VS Code Debugging
-
-- **Debug React**: F5 → "Debug TypeScript"
-- **Debug Tests**: F5 → "Debug Tests"
-
-## 📚 Nächste Schritte
-
-- [ ] Weitere React-Komponenten hinzufügen
-- [ ] SCSS-Mixins für häufige Patterns
-- [ ] State Management (Redux, Zustand, etc.)
-- [ ] API-Integration
-- [ ] Routing (React Router)
-- [ ] Testing Library für React-Komponenten
-- [ ] Docker-Container erstellen
-- [ ] CI/CD-Pipeline einrichten
-
-## 🤝 Contributing
-
-1. Code formatieren: `npm run format`
-2. Linting: `npm run lint`
-3. Tests: `npm test`
-4. Pull Request erstellen
-
-## 📄 Lizenz
-
-MIT
+<p align="right">
+  <a href="#readme-top">
+<img src="https://custom-icon-badges.demolab.com/badge/-Back%20to%20top-000000?style=for-the-badge&logo=upptime&logoColor=ffffff&labelColor=FF0000" alt="Back to top">
+  </a>
+</p>
