@@ -18,7 +18,7 @@ export const UserPage = (): ReactElement => {
             <Users size={20} />
             Weather History
           </button>
-          <button className={`${styles.actionButton} ${styles.active}`}>
+          <button className={styles.actionButton}>
             <Gift size={20} />
             Weather Alerts
           </button>

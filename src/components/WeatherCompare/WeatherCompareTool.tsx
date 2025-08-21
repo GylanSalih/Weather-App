@@ -2,8 +2,15 @@
 // beeinhaltet die weathercomparetool komponente
 // wird von der page alleine geladen
 
+// User tippt Stadtname ins Input → searchTerm.
+// Beim Submit → addCityToCompare(searchTerm).
+// Dort wird fetchWeatherData(cityName) aufgerufen → API liefert JSON.
+// JSON wird ins eigene WeatherData-Format gemappt.
+// Dann wird es in einen freien Slot (compareSlots) gesetzt.
+
+
 import React, { useEffect, useState } from 'react';
-import { Search, Plus, X, Cloud, Sun, CloudRain, Eye, Wind, Droplets, Thermometer, Heart } from 'lucide-react';
+import { Search, Plus, X, Cloud, Sun, CloudRain, Eye, Wind, Droplets, Thermometer, Heart, User } from 'lucide-react';
 import { fetchWeatherData } from '../../api/weather';
 import { useDarkMode } from '../../contexts/DarkModeContext';
 import styles from './WeatherCompareTool.module.scss';
@@ -50,6 +57,9 @@ export const WeatherCompareTool: React.FC = () => {
     const saved = localStorage.getItem("compareSlots");
     return saved ? JSON.parse(saved) : [null, null, null];
   });
+  // Wenn nichts im localStorage liegt wird [null, null, null] genommen.
+  // map rendert für jedes Element im Array ein <CompareSlot />.
+  // Da das Array am Anfang 3 Einträge hat wird immer 3 Slots angezeigt.
   // wenn keine daten in localStorage sind, werden die nulls geladen
   // die gespeicherten daten werden aus localStorage geladen und in compareSlots gespeichert
 
@@ -71,12 +81,18 @@ export const WeatherCompareTool: React.FC = () => {
   }, [favorites]);
 
   // add to favorites button
+  // wenn die stadt bereits im favorites array ist, wird ein error geworfen
   const addToFavorite = (cityName: string) => {
     if (!favorites.includes(cityName)) {
       setFavorites([...favorites, cityName]);
     }
     console.log(favorites);
   };
+
+  // addCityToCompare ist eine asynchrone funktion
+  // die eine stadt zum vergleich hinzufügt
+  // zusammenarbeit von daten die an die api übergeben werden und aus der api zurückkommen
+  // und ins slot gesetzt werden
 
   const addCityToCompare = async (cityName: string) => {
     if (!cityName.trim()) return;
@@ -97,7 +113,10 @@ export const WeatherCompareTool: React.FC = () => {
     }
 
     // Find first empty slot
+    // er sucht nach dem ersten leeren slot und gibt den index als -1 zurück
     const emptySlotIndex = compareSlots.findIndex(slot => slot === null);
+    // überprüft ob im slot platz ist
+    // wenn nicht, wird ein error geworfen
     if (emptySlotIndex === -1) {
       setError('Maximal 3 cities can be compared');
       return;
@@ -111,6 +130,7 @@ export const WeatherCompareTool: React.FC = () => {
       const apiResponse = await fetchWeatherData(cityName);
 
       // wetterdaten aus der api in die weatherdata konvertieren
+      // aus dem context kopiert
       const weatherData: WeatherData = {
         city: apiResponse.name,
         temperature: apiResponse.main.temp,
@@ -127,7 +147,7 @@ export const WeatherCompareTool: React.FC = () => {
       newSlots[emptySlotIndex] = weatherData;
       setCompareSlots(newSlots);
       setSearchTerm('');
-    } catch (err) {
+    } catch (spezifischeFehlerSuche) {
       setError('City not found, please try again');
     } finally {
       setLoading(false);
@@ -175,8 +195,8 @@ export const WeatherCompareTool: React.FC = () => {
   // Mit preventDefault: Seite bleibt, JavaScript übernimmt die verarbeitung
   // wenn preventDefault nicht verwendet wird, wird die seite neu geladen
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    addCityToCompare(searchTerm);
+    e.preventDefault(); // verhindert das die seite neu geladen wird
+    addCityToCompare(searchTerm); // übergibt den searchTerm an die addCityToCompare funktion
   };
 
   const filledSlots = compareSlots.filter(slot => slot !== null);
@@ -196,13 +216,14 @@ export const WeatherCompareTool: React.FC = () => {
           {/* statt statisch tags die favorites tags aus der favorites array anzeigen */}
 
 
-          {/* sollte damit jetzt eigentlich dynamisch angezeigt werden */}
+          {/* um die tags anzuzeigen */}
           {favorites.map((favorite: string) => (
             <div key={favorite} className={styles.favoriteTag}>{favorite}</div>
           ))}
       
 
            {/* um die tags zu entfernen */}
+           {/* wenn die favorites array länger als 0 ist, wird der button angezeigt */}
         {favorites.length > 0 && (
         <div className={styles.favoritesActions}>
           <button 
@@ -211,6 +232,8 @@ export const WeatherCompareTool: React.FC = () => {
           >
             Remove the tags
           </button>
+
+ 
 
           {/* um die anzahl der tags anzuzeigen */}
           <div className={styles.summary}>
@@ -260,6 +283,7 @@ export const WeatherCompareTool: React.FC = () => {
             weatherData={weatherData}
             onRemove={() => removeCity(index)}
             index={index}
+            addToFavorite={addToFavorite}
           />
         ))}
       </div>

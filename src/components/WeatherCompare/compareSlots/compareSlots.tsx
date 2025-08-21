@@ -12,10 +12,11 @@ interface compareSlotProps {
     weatherData: WeatherData | null;
     onRemove: () => void;
     index: number;
+    addToFavorite: (cityName: string) => void;
 }
 
 // compare slot komponente
-const compareSlot: React.FC<compareSlotProps> = ({ weatherData, onRemove, index }) => {
+const compareSlot: React.FC<compareSlotProps> = ({ weatherData, onRemove, index, addToFavorite }) => {
     const { darkMode } = useDarkMode();
     // favorites state definieren
     const [favorites, setFavorites] = useState<string[]>([]);
@@ -47,12 +48,7 @@ const compareSlot: React.FC<compareSlotProps> = ({ weatherData, onRemove, index 
       return <Sun size={32} className={styles.weatherIcon} />;
     };
   
-      // add to favorites button
-      const onAddToFavorites = (id: string) => {
-        if (!favorites.includes(id)) setFavorites([...favorites, id]);
-        localStorage.setItem('favorites', JSON.stringify(favorites));
-        console.log(id);
-      };
+
   
     return (
       <div className={`${styles.compareSlot} ${styles.filled} ${darkMode ? styles.dark : ''}`}>
@@ -62,7 +58,7 @@ const compareSlot: React.FC<compareSlotProps> = ({ weatherData, onRemove, index 
             <X size={16} />
           </button>
   
-          <button className={styles.addToFavoritesButton} onClick={() => onAddToFavorites(weatherData.city)}>
+          <button className={styles.addToFavoritesButton} onClick={() => addToFavorite(weatherData.city)}>
             {/* wenn die stadt im favorites array ist, dann fülle den heart mit der farbe der stadt */}
             <Heart size={16} className={styles.heartIcon} fill={favorites.includes(weatherData.city) ? 'currentColor' : 'none'} />
           </button>

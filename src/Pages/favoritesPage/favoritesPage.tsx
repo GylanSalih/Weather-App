@@ -60,6 +60,8 @@ export const FavoritesPage = (): ReactElement => {
     setFavorites(favorites.filter(city => city.id !== id));
   };
 
+  // copy paste from weathercompare
+  // um die weather icons anzuzeigen
   const getWeatherIcon = (iconCode: string) => {
     if (iconCode.includes('01')) return <Sun size={24} className={styles.weatherIcon} />;
     if (iconCode.includes('02') || iconCode.includes('03') || iconCode.includes('04')) 
@@ -69,6 +71,8 @@ export const FavoritesPage = (): ReactElement => {
     return <Sun size={24} className={styles.weatherIcon} />;
   };
 
+  // um die favorites zu filtern
+  // mit lowercase um die case insensitiv zu machen
   const filteredFavorites = favorites.filter(city =>
     city.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
     city.country.toLowerCase().includes(searchTerm.toLowerCase())
