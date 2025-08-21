@@ -6,6 +6,25 @@ Ein sauberes TypeScript + React + SCSS-Projekt mit moderner Struktur.
 
 -** Still in Progress
 
+## 🖼️ Showcase
+
+Hier sind Screenshots der verschiedenen Seiten der Wetter-App:
+
+### Weather Page
+![Weather Page](docs/images/showcase1.png)
+
+### Compare Tool
+![Compare Tool](docs/images/showcase2.png)
+
+### Settings Page
+![Settings Page](docs/images/showcase3.png)
+
+### Favorites Page
+![Favorites Page](docs/images/showcase4.png)
+
+### User Page
+![User Page](docs/images/showcase5.png)
+
 ## 📦 Installation
 
 ```bash
