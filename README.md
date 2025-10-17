@@ -23,30 +23,49 @@
 [stars-url]: https://github.com/GylanSalih/Weather-App/stargazers
 [issues-url]: https://github.com/GylanSalih/Weather-App/issues
 [license-url]: https://github.com/GylanSalih/Weather-App/blob/main/LICENSE
-
-<!-- PROJECT LOGO -->
+<!-- PROJECT SHOWCASE -->
 <br />
-<div align="center">
-  <a href="https://github.com/GylanSalih/Weather-App">
-    <img src="https://github.com/GylanSalih/Weather-App/blob/main/public/assets/img/showcase/settings.png" alt="Weather App Preview" width="300" style="margin-right: 10px; display: inline-block;">
-  </a>
-  <a href="https://github.com/GylanSalih/Weather-App">
-    <img src="https://github.com/GylanSalih/Weather-App/blob/main/public/assets/img/showcase/home.png" alt="Weather App Preview" width="300" style="margin-right: 10px; display: inline-block;">
-  </a>
-  <a href="https://github.com/GylanSalih/Weather-App">
-    <img src="docs/images/showcase1.png" alt="Weather App Preview" width="300" style="margin-right: 10px; display: inline-block;">
-  </a>
-  <a href="https://github.com/GylanSalih/Weather-App">
-    <img src="docs/images/showcase2.png" alt="Weather App Preview 2" width="300" style="margin-right: 10px; display: inline-block;">
-  </a>
-  <a href="https://github.com/GylanSalih/Weather-App">
-    <img src="docs/images/showcase3.png" alt="Weather App Preview 3" width="300" style="margin-right: 10px; display: inline-block;">
-  </a>
-  <a href="https://github.com/GylanSalih/Weather-App">
-    <img src="docs/images/showcase4.png" alt="Weather App Preview 4" width="300" style="margin-right: 10px; display: inline-block;">
-  </a>
-  <a href="https://github.com/GylanSalih/Weather-App">
-    <img src="docs/images/showcase5.png" alt="Weather App Preview 5" width="300" style="margin-left: 10px; display: inline-block;">
-  </a>
-</div>
+<table align="center">
+  <tr>
+    <td align="center">
+      <a href="https://github.com/GylanSalih/Weather-App">
+        <img src="https://github.com/GylanSalih/Weather-App/blob/main/public/assets/img/showcase/settings.png" alt="Settings" width="250">
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/GylanSalih/Weather-App">
+        <img src="https://github.com/GylanSalih/Weather-App/blob/main/public/assets/img/showcase/home.png" alt="Home" width="250">
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/GylanSalih/Weather-App">
+        <img src="docs/images/showcase1.png" alt="Showcase 1" width="250">
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/GylanSalih/Weather-App">
+        <img src="docs/images/showcase2.png" alt="Showcase 2" width="250">
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/GylanSalih/Weather-App">
+        <img src="docs/images/showcase3.png" alt="Showcase 3" width="250">
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/GylanSalih/Weather-App">
+        <img src="docs/images/showcase4.png" alt="Showcase 4" width="250">
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3" align="center">
+      <a href="https://github.com/GylanSalih/Weather-App">
+        <img src="docs/images/showcase5.png" alt="Showcase 5" width="250">
+      </a>
+    </td>
+  </tr>
+</table>
 <br />
