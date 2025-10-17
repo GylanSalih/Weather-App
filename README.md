@@ -171,89 +171,6 @@
   </a>
 </p>
 
-<h2 id="getting-started"><span style="display: inline-flex; align-items: center;"><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" /> Getting Started</span></h2>
-
-To get the Weather App running locally, you'll need <a href="https://git-scm.com">Git</a> and <a href="https://nodejs.org/en/download/">Node.js</a> (which includes <a href="http://npmjs.com">npm</a>) installed on your computer. Follow these steps:
-
-<ol>
-  <li><strong>Clone the repository:</strong>
-    <pre><code>git clone https://github.com/GylanSalih/Weather-App.git</code></pre>
-  </li>
-  <li><strong>Navigate into the repository:</strong>
-    <pre><code>cd Weather-App</code></pre>
-  </li>
-  <li><strong>Install dependencies:</strong>
-    <pre><code>npm install</code></pre>
-    <p>or</p>
-    <pre><code>yarn install</code></pre>
-  </li>
-  <li><strong>Start the development server:</strong>
-    <pre><code>npm run dev</code></pre>
-    <p>or</p>
-    <pre><code>yarn dev</code></pre>
-  </li>
-</ol>
-
-> **Note**
-> The application will be available at `http://localhost:5173`.
-
-### 📝 Available Scripts
-
-```bash
-npm run dev        # Start development server
-npm run build      # Create production build  
-npm run preview    # Preview production build
-npm run lint       # Run ESLint
-npm run test       # Run Jest tests
-```
-
-<p align="right">
-  <a href="#readme-top">
-<img src="https://custom-icon-badges.demolab.com/badge/-Back%20to%20top-000000?style=for-the-badge&logo=upptime&logoColor=ffffff&labelColor=FF0000" alt="Back to top">
-  </a>
-</p>
-
-## <span style="display: inline-flex; align-items: center;"><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" /> Contributing</span>
-
-We welcome contributions to **Weather App**! 🎉 Whether it's bug fixes, documentation improvements, or new features - your help is always appreciated.
-
-### How to Contribute
-
-1. **Fork the Repository**
-2. **Create a Feature Branch**
-   ```bash
-   git checkout -b feature/amazing-weather-feature
-   ```
-3. **Make Your Changes**
-4. **Run Quality Checks**
-   ```bash
-   npm run lint:fix
-   npm run type-check
-   npm test
-   ```
-5. **Commit Your Changes**
-   ```bash
-   git commit -m "Add: New weather visualization feature"
-   ```
-6. **Push to the Branch**
-   ```bash
-   git push origin feature/amazing-weather-feature
-   ```
-7. **Open a Pull Request**
-
-### Contribution Guidelines
-
-- Follow the existing code style and structure
-- Write clear, descriptive commit messages  
-- Add tests for new features
-- Update documentation when necessary
-- Be respectful and constructive in discussions
-
-<p align="right">
-  <a href="#readme-top">
-<img src="https://custom-icon-badges.demolab.com/badge/-Back%20to%20top-000000?style=for-the-badge&logo=upptime&logoColor=ffffff&labelColor=FF0000" alt="Back to top">
-  </a>
-</p>
 
 ## <span style="display: inline-flex; align-items: center;"><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Pushpin.png" alt="Pushpin" width="25" height="25" /> License</span>
 
@@ -278,9 +195,3 @@ Distributed under the MIT License. See `LICENSE` for more information.
   
   <p><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Grinning%20Cat.png" alt="Grinning Cat" width="25" height="25" /> If you like this project, please consider starring it on GitHub! Your support is greatly appreciated! <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Rocket.png" alt="Rocket" width="25" height="25" /></p>
 </div>
-
-<p align="right">
-  <a href="#readme-top">
-<img src="https://custom-icon-badges.demolab.com/badge/-Back%20to%20top-000000?style=for-the-badge&logo=upptime&logoColor=ffffff&labelColor=FF0000" alt="Back to top">
-  </a>
-</p>
