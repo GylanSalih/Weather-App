@@ -1,11 +1,12 @@
 import { ReactElement, useEffect, useState } from 'react';
 import styles from './SearchBar.module.scss';
-import { Search } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { fetchWeatherData } from '../../api/weather';
+import { useDarkMode } from '../../contexts/DarkModeContext';
 
 export const SearchBar = (): ReactElement => {
   const navigate = useNavigate();
+  const { darkMode } = useDarkMode();
   const [searchTerm, setSearchTerm] = useState('');
 
   const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
@@ -28,9 +29,8 @@ export const SearchBar = (): ReactElement => {
     <div className={styles.searchBarContainer}>
       <div className={styles.searchBar}>
         <form onSubmit={handleSearch}>
-          <input type="text" placeholder="Search City" className={styles.searchBarInput} name="search" />
+          <input type="text" placeholder="Search City" className={`${styles.searchBarInput} ${darkMode ? styles.darkMode : ''}`} name="search" />
         </form>
-        <Search size={28} className={styles.searchBarIcon} />
       </div>
     </div>
   );

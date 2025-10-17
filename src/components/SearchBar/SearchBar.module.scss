@@ -1,9 +1,14 @@
+@use '../../styles/variables' as *;
+
 .searchBarContainer {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .searchBar {
@@ -15,83 +20,92 @@
   width: 100%;
 }
 
-.searchBarIcon {
-  position: absolute;
-  right: 16px;
-  color: rgba(26, 32, 44, 0.6);
-  pointer-events: none;
-  z-index: 1;
-}
 
 .searchBarInput {
-  width: 500px;
-  height: 48px;
-  border: none;
+  width: 100%;
+  max-width: 500px;
+  height: 56px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   outline: none;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  color: #1a202c;
-  text-align: center;
-  font-size: 16px;
-  font-weight: 400;
-  font-family: 'Rubik-Regular', sans-serif;
-  border-radius: 12px;
-  padding: 0 20px;
-  box-shadow: 
-    0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06),
-    0 0 0 1px rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.05);
+  color: #1a1a1a;
+  text-align: left;
+  font-size: $font-size-base;
+  font-weight: $font-weight-normal;
+  font-family: $font-family-primary;
+  border-radius: 16px;
+  padding: 0 $spacing-lg;
+  box-shadow: none;
   transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+
+  &::placeholder {
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: $font-weight-normal;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: #1a5f1a;
+    box-shadow: 0 0 0 3px rgba(26, 95, 26, 0.1);
+    background: rgba(0, 0, 0, 0.08);
+  }
+  
+  // Dark mode styles
+  &.darkMode {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.7);
+    }
+    
+    &:focus {
+      border-color: #1a5f1a;
+      background: rgba(255, 255, 255, 0.08);
+    }
+  }
 }
 
 /* Tablet responsive */
 @media screen and (max-width: 1024px) {
-  .searchBarInput {
-    width: 400px;
-    height: 38px;
-    font-size: 15px;
+  .searchBarContainer {
+    max-width: 500px;
+    padding: 0 16px;
   }
+  
+  .searchBarInput {
+    max-width: 400px;
+    height: 48px;
+    font-size: $font-size-sm;
+  }
+  
 }
 
 /* Mobile responsive */
 @media screen and (max-width: 768px) {
   .searchBarInput {
-    width: 300px;
-    height: 36px;
-    font-size: 14px;
+    max-width: 100%;
+    height: 44px;
+    font-size: $font-size-sm;
   }
   
   .searchBarContainer {
-    padding: 0 15px;
+    padding: 0 $spacing-md;
   }
+  
 }
 
 /* Small mobile responsive */
 @media screen and (max-width: 480px) {
   .searchBarInput {
-    width: 250px;
-    height: 34px;
-    font-size: 13px;
+    height: 40px;
+    font-size: $font-size-xs;
   }
   
   .searchBarContainer {
-    padding: 0 10px;
+    padding: 0 $spacing-sm;
   }
+  
 }
-
-.searchBarInput:focus {
-  outline: none;
-  border: none;
-  background: rgba(255, 255, 255, 1);
-  transform: translateY(-1px);
-  box-shadow: 
-    0 6px 10px -2px rgba(0, 0, 0, 0.1),
-    0 3px 5px -1px rgba(0, 0, 0, 0.06),
-    0 0 0 2px rgba(99, 179, 237, 0.3);
-}
-
-.searchBarInput::placeholder {
-  color: rgba(26, 32, 44, 0.6);
-  font-weight: 400;
-}
-

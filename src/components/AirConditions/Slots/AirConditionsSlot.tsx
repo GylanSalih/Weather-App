@@ -3,12 +3,14 @@ import styles from "./AirConditionsSlot.module.scss";
 import { Wind, Droplet, Sun, Thermometer, Moon } from "lucide-react";
 import { WeatherContext } from "../../../contexts/weatherProviderContext";
 import { useContext } from "react";
+import { useDarkMode } from "../../../contexts/DarkModeContext";
 
 // erlaubt die daten zu übergeben
 // damit AirConditionsSlot diese werte selbst reinschreiben kann
 
 // warum benutzue ich React.cloneElement? ich überschreibe die className des icons
 export const AirConditionsSlot = (props: { index: number }): ReactElement => {
+  const { darkMode } = useDarkMode();
   const titles = [
     "Real Feel:",
     "Wind:",
@@ -18,9 +20,9 @@ export const AirConditionsSlot = (props: { index: number }): ReactElement => {
   ];
 
   const icons = [
-    <Thermometer className={styles.lucideIcon} />,
-    <Wind className={styles.lucideIcon} />,
-    <Droplet className={styles.lucideIcon} />,
+    <Thermometer className={`${styles.lucideIcon} ${darkMode ? styles.darkMode : ''}`} />,
+    <Wind className={`${styles.lucideIcon} ${darkMode ? styles.darkMode : ''}`} />,
+    <Droplet className={`${styles.lucideIcon} ${darkMode ? styles.darkMode : ''}`} />,
     null, // placeholder für sunrise/sunset icon
   ];
 
@@ -38,9 +40,9 @@ export const AirConditionsSlot = (props: { index: number }): ReactElement => {
   if (props.index === 3) {
     iconToRender =
     airConditions?.is_day === 1 ? (
-        <Sun className={styles.lucideIcon} />
+        <Sun className={`${styles.lucideIcon} ${darkMode ? styles.darkMode : ''}`} />
       ) : (
-        <Moon className={styles.lucideIcon} />
+        <Moon className={`${styles.lucideIcon} ${darkMode ? styles.darkMode : ''}`} />
       );
   } else {
     iconToRender = icons[props.index];
@@ -79,14 +81,14 @@ export const AirConditionsSlot = (props: { index: number }): ReactElement => {
   // ------------------------------------------------------------
 
   return (
-    <div className={styles.itemBox}>
+    <div className={`${styles.itemBox} ${darkMode ? styles.darkMode : ''}`}>
       <div className={styles.titleAndIcon}>
         {iconToRender}
-        <h2 className={styles.title}>{textToRender}</h2>
+        <h2 className={`${styles.title} ${darkMode ? styles.darkMode : ''}`}>{textToRender}</h2>
       </div>
 
       <div className={styles.valueContainer}>
-        <p className={styles.textValue}>{valueToRender}</p>
+        <p className={`${styles.textValue} ${darkMode ? styles.darkMode : ''}`}>{valueToRender}</p>
       </div>
     </div>
   );

@@ -1,119 +1,274 @@
-.headerContainer {
-  width: 100%;
-  backdrop-filter: saturate(180%) blur(8px);
-  background-color: #202b3b;
-  border-bottom: 1px solid var(--border);
-  position: sticky;
+// Main container
+.modal {
+  position: fixed;
   top: 0;
-  z-index: 50;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-.darkMode .headerContainer {}
-
-.header {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 8px 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  /* no transitions on container */
-
-  .logo {
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    /* no transitions */
-
-    &:hover {
-      opacity: 0.8;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1000;
+  pointer-events: none;
+  
+  // Dark mode styles
+  &.darkMode {
+    .sidebar {
+      background: var(--dark-background, #171717);
+      border-right-color: var(--dark-border, #404040);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
     }
-
-    .logoImg {
-      height: 40px;
-      width: auto;
-      position: static;
-      margin: 0;
-    }
-  }
-
-  .userIcon {
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-  }
-
-  .favoritesIcon {
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-  }
-
-  .menu {
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-    align-items: center;
     
-    .menuButton {
-      text-decoration: none;
-      color: var(--foreground);
-      font-weight: 500;
-      padding: 0.35rem 0.7rem;
-      border-radius: var(--radius);
-      /* no transitions */
-
-      &:hover {
-        background-color: color-mix(in oklab, var(--muted), var(--foreground) 4%);
-        color: var(--foreground);
-      }
-
-      &.active {
-        background-color: #fff;
-        color: var(--primary-foreground);
-      }
+    .mobileHeader {
+      background: var(--dark-background, #171717);
+      border-bottom-color: var(--dark-border, #404040);
     }
   }
 }
 
-.darkMode .header {}
+// Desktop Sidebar
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 240px;
+  height: 100vh;
+  background: var(--header-background, #ffffff);
+  border-right: 1px solid var(--border-color, #e5e7eb);
+  display: flex;
+  flex-direction: column;
+  padding: 24px 0;
+  pointer-events: auto;
+  backdrop-filter: blur(20px);
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+}
 
-// Responsive design
-@media (max-width: 640px) {
-  .header .menu {
-    display: none;
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px 32px 20px;
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: all 0.2s ease;
+
+  &:hover {
+    opacity: 0.8;
+    transform: scale(1.02);
+  }
+}
+
+.logoImg {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 0 16px;
+  flex: 1;
+}
+
+.menuButton {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+  border: none;
+  background: none;
+  cursor: pointer;
+  text-align: left;
+  position: relative;
+
+  &:hover {
+    background: var(--background-secondary, #f3f4f6);
+    color: var(--accent-color, #1a5f1a);
+    transform: translateX(2px);
   }
 
-  .header {
-    padding: 1rem;
-    gap: 1rem;
-    max-height: 40px;
-
-    .menu {
-      gap: 1rem;
+  &.active {
+    background: var(--accent-color, #1a5f1a);
+    color: var(--text-on-accent, #ffffff);
+    box-shadow: 0 2px 8px rgba(26, 95, 26, 0.3);
+    
+    &:hover {
+      transform: translateX(0);
     }
   }
 }
 
+// Dark mode styles for menu buttons
+.modal.darkMode .menuButton {
+  color: var(--dark-foreground, #fafafa);
+  
+  &:hover {
+    background: var(--dark-secondary, #404040);
+    color: var(--accent-color, #2d7a2d);
+  }
+  
+  &.active {
+    background: var(--accent-color, #1a5f1a);
+    color: var(--text-on-accent, #ffffff);
+  }
+}
 
+// Bottom Section
+.bottomSection {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 0 16px;
+  margin-top: auto;
+}
 
+// Dark Mode Toggle
+.darkModeToggle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: var(--background-secondary, #f8f9fa);
+  border: 1px solid var(--border-color, #e5e7eb);
+  border-radius: 12px;
+  color: var(--text-primary);
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
 
+  &:hover {
+    background: var(--accent-color, #1a5f1a);
+    color: var(--text-on-accent, #ffffff);
+    border-color: var(--accent-color, #1a5f1a);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(26, 95, 26, 0.2);
+  }
 
+  &:active {
+    transform: translateY(0);
+  }
+}
 
+// Dark mode styles for dark mode toggle
+.modal.darkMode .darkModeToggle {
+  background: var(--dark-secondary, #404040);
+  border-color: var(--dark-border, #525252);
+  color: var(--dark-foreground, #fafafa);
+  
+  &:hover {
+    background: var(--accent-color, #1a5f1a);
+    color: var(--text-on-accent, #ffffff);
+    border-color: var(--accent-color, #1a5f1a);
+  }
+}
 
-/* ------------------------------------------ Mobile Menu Start ------------------------------------------ */
+// User Actions
+.userActions {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
 
+.actionButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  color: var(--text-primary);
+  text-decoration: none;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+  background: var(--background-secondary, #f8f9fa);
+  border: 1px solid var(--border-color, #e5e7eb);
+  flex: 1;
 
+  &:hover {
+    background: var(--accent-color, #1a5f1a);
+    color: var(--text-on-accent, #ffffff);
+    border-color: var(--accent-color, #1a5f1a);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(26, 95, 26, 0.2);
+  }
 
+  &:active {
+    transform: translateY(0);
+  }
+}
 
-/* Mobile Menu Button - Hidden on Desktop */
-.mobileMenuButton {
+// Dark mode styles for action buttons
+.modal.darkMode .actionButton {
+  background: var(--dark-secondary, #404040);
+  border-color: var(--dark-border, #525252);
+  color: var(--dark-foreground, #fafafa);
+  
+  &:hover {
+    background: var(--accent-color, #1a5f1a);
+    color: var(--text-on-accent, #ffffff);
+    border-color: var(--accent-color, #1a5f1a);
+  }
+}
+
+// Mobile Header
+.mobileHeader {
   display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: var(--header-background, #ffffff);
+  border-bottom: 1px solid var(--border-color, #e5e7eb);
+  z-index: 1001;
+  pointer-events: auto;
+  backdrop-filter: blur(10px);
 }
 
-/* Mobile Menu Overlay */
+.mobileHeaderContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 0 20px;
+}
+
+.mobileLogo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.mobileMenuButton {
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background: var(--background-secondary, #f3f4f6);
+  }
+}
+
+// Mobile Menu Overlay
 .mobileMenuOverlay {
   position: fixed;
   top: 0;
@@ -121,208 +276,114 @@
   right: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.5);
-  z-index: 1000;
-  animation: fadeIn 0.3s ease-out;
-}
+  z-index: 1002;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 60px 20px 20px 20px;
+  animation: fadeIn 0.3s ease;
 
-.mobileMenuOverlay.mobileMenuOverlayClosing {
-  animation: fadeOut 0.3s ease-out forwards;
-}
-
-.darkMode .mobileMenuOverlay {
-  background: rgba(0, 0, 0, 0.7);
+  &.mobileMenuOverlayClosing {
+    animation: fadeOut 0.3s ease;
+  }
 }
 
 .mobileMenu {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: #ffffff;
-  transform: translateX(-100%);
-  animation: slideInFromLeft 0.3s ease-out forwards;
-  display: flex;
-  flex-direction: column;
-}
+  background: var(--header-background, #ffffff);
+  border-radius: 12px;
+  padding: 20px;
+  min-width: 280px;
+  max-width: 320px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  animation: slideIn 0.3s ease;
 
-.mobileMenu.mobileMenuClosing {
-  animation: slideOutToLeft 0.3s ease-out forwards;
-}
-
-.darkMode .mobileMenu {
-  background: #000000;
+  &.mobileMenuClosing {
+    animation: slideOut 0.3s ease;
+  }
 }
 
 .mobileMenuHeader {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 1.5rem;
-  border-bottom: 1px solid #e2e8f0;
-}
-
-.darkMode .mobileMenuHeader {
-  border-bottom: 1px solid #404040;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-color, #e5e7eb);
 }
 
 .mobileMenuTitle {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 600;
-  color: #0f172a;
+  color: var(--text-primary);
   margin: 0;
 }
 
-.darkMode .mobileMenuTitle {
-  color: #ffffff;
-}
-
 .mobileMenuClose {
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #f1f5f9;
-  color: #64748b;
-  border: none;
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: all 0.2s ease;
+
+  &:hover {
+    background: var(--background-secondary, #f3f4f6);
+  }
 }
 
-.darkMode .mobileMenuClose {
-  background: #1a1a1a;
-  color: #999999;
-}
-
-.mobileMenuClose:hover {
-  background: #e2e8f0;
-  color: #475569;
-}
-
-.darkMode .mobileMenuClose:hover {
-  background: #262626;
-  color: #ffffff;
-}
-
-.mobileMenuContent {
-  flex: 1;
-  padding: 2rem 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-}
-
-.mobileViewToggle {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.mobileViewButton {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  background: #f8fafc;
-  color: #64748b;
-  border: 1px solid #e2e8f0;
-  padding: 1.25rem 1.5rem;
-  border-radius: 16px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  font-size: 1.1rem;
-  font-weight: 500;
-  text-align: left;
-}
-
-.darkMode .mobileViewButton {
-  background: #1a1a1a;
-  color: #999999;
-  border: 1px solid #404040;
-}
-
-.mobileViewButton:hover {
-  background: #f1f5f9;
-  color: #475569;
-  transform: translateY(-2px);
-}
-
-.darkMode .mobileViewButton:hover {
-  background: #262626;
-  color: #ffffff;
-}
-
-.mobileViewButton.active {
-  background: #0f172a;
-  color: #ffffff;
-  border: 1px solid #0f172a;
-}
-
-.darkMode .mobileViewButton.active {
-  background: #ffffff;
-  color: #0f172a;
-  border: 1px solid #ffffff;
-}
-
-.mobileMenuActions {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.mobileAddButton,
-.mobileOvertimeButton,
-.mobileDarkModeButton,
 .mobileSettingsButton {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  background: #f8fafc;
-  color: #64748b;
-  border: 1px solid #e2e8f0;
-  padding: 1.25rem 1.5rem;
-  border-radius: 16px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  font-size: 1.1rem;
+  gap: 12px;
+  width: 100%;
+  padding: 12px 16px;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  text-decoration: none;
   font-weight: 500;
+  font-size: 1rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  cursor: pointer;
   text-align: left;
+  margin-bottom: 8px;
+
+  &:hover {
+    background: var(--background-secondary, #f3f4f6);
+    color: var(--accent-color, #3b82f6);
+  }
 }
 
-.darkMode .mobileAddButton,
-.darkMode .mobileOvertimeButton,
-.darkMode .mobileDarkModeButton,
-.darkMode .mobileSettingsButton {
-  background: #1a1a1a;
-  color: #999999;
-  border: 1px solid #404040;
+.mobileDarkModeButton {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px 16px;
+  background: none;
+  border: 1px solid var(--border-color, #e5e7eb);
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  text-align: left;
+  margin-top: 16px;
+
+  &:hover {
+    background: var(--background-secondary, #f3f4f6);
+    border-color: var(--accent-color, #3b82f6);
+  }
 }
 
-.mobileAddButton:hover,
-.mobileOvertimeButton:hover:not(:disabled),
-.mobileDarkModeButton:hover,
-.mobileSettingsButton:hover {
-  background: #f1f5f9;
-  color: #475569;
-  transform: translateY(-2px);
-}
-
-.darkMode .mobileAddButton:hover,
-.darkMode .mobileOvertimeButton:hover:not(:disabled),
-.darkMode .mobileDarkModeButton:hover,
-.darkMode .mobileSettingsButton:hover {
-  background: #262626;
-  color: #ffffff;
-}
-
-.mobileOvertimeButton:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-  transform: none;
-}
-
-/* Animations */
+// Animations
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -341,65 +402,52 @@
   }
 }
 
-@keyframes slideInFromLeft {
+@keyframes slideIn {
   from {
-    transform: translateX(-100%);
+    transform: translateX(100%);
+    opacity: 0;
   }
   to {
     transform: translateX(0);
+    opacity: 1;
   }
 }
 
-@keyframes slideOutToLeft {
+@keyframes slideOut {
   from {
     transform: translateX(0);
+    opacity: 1;
   }
   to {
-    transform: translateX(-100%);
+    transform: translateX(100%);
+    opacity: 0;
   }
 }
 
+// Responsive Design
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 200px;
+  }
+}
 
-
-
-
-/* Mobile Responsive Styles */
 @media (max-width: 768px) {
-
-  .mobileMenuButton {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #f1f5f9;
-    color: #64748b;
-    border: 1px solid #e2e8f0;
-    width: 48px;
-    height: 48px;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: all 0.2s ease;
+  .sidebar {
+    display: none;
   }
 
-  .darkMode .mobileMenuButton {
-    background: #1a1a1a;
-    color: #999999;
-    border: 1px solid #404040;
-    padding: 1rem;
-    gap: 10px;
+  .mobileHeader {
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .mobileHeaderContainer {
+    padding: 0 16px;
   }
 
-  .mobileMenuButton:hover {
-    background: #e2e8f0;
-    color: #475569;
+  .mobileMenu {
+    min-width: 260px;
+    max-width: 280px;
   }
-
-  .darkMode .mobileMenuButton:hover {
-    background: #262626;
-    color: #ffffff;
-  }
-} 
-
-
-
-
-
+}

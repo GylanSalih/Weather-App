@@ -4,21 +4,23 @@ import { Thermometer, Wind, Droplet, Sun } from "lucide-react";
 import { AirConditionsSlot } from "./Slots/AirConditionsSlot";
 import { WeatherContext } from "../../contexts/weatherProviderContext";
 import { useContext } from "react";
+import { useDarkMode } from "../../contexts/DarkModeContext";
 
 export const AirConditions = (): ReactElement => {
   const { airConditions, loading, error } = useContext(WeatherContext);
+  const { darkMode } = useDarkMode();
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
 
 
   return (
-    <div className={styles.airConditions}>
+    <div className={`${styles.airConditions} ${darkMode ? styles.darkMode : ''}`}>
 
 
         <div className={styles.titleAndButtonParent}>
-            <h2 className={styles.title}>Air Conditions</h2>
-            <button className={styles.moreInfoButton}>
+            <h2 className={`${styles.title} ${darkMode ? styles.darkMode : ''}`}>Air Conditions</h2>
+            <button className={`${styles.moreInfoButton} ${darkMode ? styles.darkMode : ''}`}>
                 Mehr Erfahren
             </button>
         </div>

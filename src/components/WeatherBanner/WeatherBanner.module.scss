@@ -1,200 +1,215 @@
+@use '../../styles/variables' as *;
+
 // content des banners
 .bannerContent {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 20px;
 }
 
 .contentRight {
-    display: flex;
-    flex-direction: row;
-    align-items: right;
-    justify-content: left;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .contentLeft {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    margin-left: 24px;
-    gap: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: $spacing-sm;
 }
-
 
 // banner
 .weatherBanner {
-    background: linear-gradient(135deg, #1a202c 0%, #2d3748 50%, #4a5568 100%);
-    border-radius: 16px;
-    box-shadow: 
-      0 4px 6px -1px rgba(0, 0, 0, 0.2),
-      0 2px 4px -1px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    height: 100%;
-    backdrop-filter: blur(10px);
-    transition: all 0.3s ease;
+  background: #f8f9fa;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-.weatherBanner:hover {
-    transform: translateY(-2px);
-    box-shadow: 
-      0 8px 15px -3px rgba(0, 0, 0, 0.25),
-      0 4px 6px -2px rgba(0, 0, 0, 0.15);
+// Dark mode styles
+.weatherBanner.darkMode {
+  background: #171717;
 }
 
 // bild des banners
 .image {
-    width: 400px;
-    height: 400px;
-    margin-right: 24px;
-    display: flex;
-    object-fit: cover;
-    align-items: flex-end;
-    justify-content: flex-end;
-    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
-    transition: transform 0.3s ease;
-}
-
-.image:hover {
-    transform: scale(1.02);
+  width: 200px;
+  height: 200px;
+  margin-right: $spacing-xl;
+  display: flex;
+  object-fit: cover;
+  align-items: center;
+  justify-content: center;
+  border-radius: $radius-lg;
+  background: $gray-50;
 }
 
 /* Tablet responsive */
 @media screen and (max-width: 1024px) {
-    .image {
-        width: 300px;
-        height: 300px;
-        margin-right: 15px;
-    }
-    
-    .title {
-        font-size: 36px;
-        line-height: 40px;
-    }
-    
-    .temperature {
-        font-size: 48px;
-        line-height: 56px;
-        margin-top: 30px;
-    }
-    
-    .contentLeft {
-        margin-left: 20px;
-    }
+  .image {
+    width: 150px;
+    height: 150px;
+    margin-right: $spacing-lg;
+  }
+  
+  .title {
+    font-size: $font-size-4xl;
+    line-height: $line-height-tight;
+  }
+  
+  .temperature {
+    font-size: $font-size-5xl;
+    line-height: $line-height-tight;
+    margin-top: $spacing-lg;
+  }
+  
+  .contentLeft {
+    margin-left: $spacing-lg;
+  }
 }
 
 /* Mobile responsive */
 @media screen and (max-width: 768px) {
-    .bannerContent {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .image {
-        width: 200px;
-        height: 200px;
-        margin-right: 0;
-        margin-bottom: 20px;
-    }
-    
-    .title {
-        font-size: 28px;
-        line-height: 32px;
-    }
-    
-    .temperature {
-        font-size: 40px;
-        line-height: 48px;
-        margin-top: 15px;
-    }
-    
-    .description {
-        font-size: 16px;
-        line-height: 20px;
-    }
-    
-    .contentLeft {
-        margin-left: 0;
-        align-items: center;
-        gap: 6px;
-    }
-    
-    .weatherBanner {
-        padding: 15px;
-    }
+  .bannerContent {
+    flex-direction: column;
+    text-align: center;
+    padding: 16px;
+  }
+  
+  .image {
+    width: 120px;
+    height: 120px;
+    margin-right: 0;
+    margin-bottom: $spacing-lg;
+  }
+  
+  .title {
+    font-size: $font-size-3xl;
+    line-height: $line-height-tight;
+  }
+  
+  .temperature {
+    font-size: $font-size-4xl;
+    line-height: $line-height-tight;
+    margin-top: $spacing-md;
+  }
+  
+  .description {
+    font-size: $font-size-base;
+    line-height: $line-height-normal;
+  }
+  
+  .contentLeft {
+    margin-left: 0;
+    align-items: center;
+    gap: $spacing-xs;
+  }
 }
 
 /* Small mobile responsive */
 @media screen and (max-width: 480px) {
-    .image {
-        width: 150px;
-        height: 150px;
-    }
-    
-    .title {
-        font-size: 24px;
-        line-height: 28px;
-    }
-    
-    .temperature {
-        font-size: 32px;
-        line-height: 40px;
-    }
-    
-    .description {
-        font-size: 14px;
-        line-height: 18px;
-    }
-    
-    .weatherBanner {
-        padding: 10px;
-    }
+  .image {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .title {
+    font-size: $font-size-2xl;
+    line-height: $line-height-tight;
+  }
+  
+  .temperature {
+    font-size: $font-size-3xl;
+    line-height: $line-height-tight;
+  }
+  
+  .description {
+    font-size: $font-size-sm;
+    line-height: $line-height-normal;
+  }
 }
 
 // titel des banners
 .title {
-    font-size: 44px;
-    font-family: 'Rubik-Bold', sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    line-height: 1.1;
-    color: #ffffff;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 4px;
+  font-size: $font-size-5xl;
+  font-family: $font-family-primary;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-tight;
+  color: $foreground;
+  margin-bottom: $spacing-xs;
+  
+  // Dark mode styles
+  &.darkMode {
+    color: var(--dark-foreground, #ffffff);
+  }
 }
 
 // beschreibung des banners
 .description {
-    font-size: 16px;
-    font-weight: 400;
-    font-family: 'Rubik-Regular', sans-serif;
-    font-style: normal;
-    line-height: 1.4;
-    color: #a0aec0;
-    margin-bottom: 4px;
+  font-size: $font-size-base;
+  font-weight: $font-weight-normal;
+  font-family: $font-family-primary;
+  line-height: $line-height-normal;
+  color: $muted-foreground;
+  margin-bottom: $spacing-xs;
+  
+  // Dark mode styles
+  &.darkMode {
+    color: var(--dark-muted-foreground, #cccccc);
+  }
 }
-
 
 // temperatur des banners
 .temperature {
-    font-family: 'Rubik-Medium', sans-serif;
-    font-weight: 500;
-    font-style: normal;
-    color: #ffffff;
-    text-align: left;
-    font-size: 64px;
-    line-height: 1.1;
-    margin-top: 16px;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  font-family: $font-family-primary;
+  font-weight: $font-weight-semibold;
+  color: $foreground;
+  text-align: left;
+  font-size: $font-size-6xl;
+  line-height: $line-height-tight;
+  margin-top: $spacing-md;
+  
+  // Dark mode styles
+  &.darkMode {
+    color: var(--dark-foreground, #ffffff);
+  }
 }
 
 .rain {
-    font-size: 14px;
-    font-family: 'Rubik-Regular', sans-serif;
-    color: #81c4f7;
-    margin-top: 8px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
+  font-size: $font-size-sm;
+  font-family: $font-family-primary;
+  color: $muted-foreground;
+  margin-top: $spacing-sm;
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+  
+  // Dark mode styles
+  &.darkMode {
+    color: var(--dark-muted-foreground, #cccccc);
+  }
+}
+
+.smallinfo {
+  font-size: $font-size-sm;
+  font-family: $font-family-primary;
+  color: $muted-foreground;
+  margin-top: $spacing-xs;
+  
+  // Dark mode styles
+  &.darkMode {
+    color: var(--dark-muted-foreground, #cccccc);
+  }
 }

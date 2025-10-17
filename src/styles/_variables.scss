@@ -1,27 +1,53 @@
-// Colors
-$primary-color: #000000;
-$secondary-color: #ffffff;
+// Modern Design System Colors
+// Neutral Palette
+$white: #ffffff;
+$gray-50: #fafafa;
+$gray-100: #f5f5f5;
+$gray-200: #e5e5e5;
+$gray-300: #d4d4d4;
+$gray-400: #a3a3a3;
+$gray-500: #737373;
+$gray-600: #525252;
+$gray-700: #404040;
+$gray-800: #262626;
+$gray-900: #171717;
+$black: #000000;
 
-$primary-white: #fff;
-$primary-black: #000;
+// Semantic Colors
+$primary: $gray-900;
+$primary-foreground: $white;
+$secondary: $gray-100;
+$secondary-foreground: $gray-900;
+$muted: $gray-100;
+$muted-foreground: $gray-500;
+$accent: $gray-200;
+$accent-foreground: $gray-900;
+$destructive: #ef4444;
+$destructive-foreground: $white;
+$border: $gray-200;
+$input: $gray-200;
+$ring: $gray-900;
+$background: $white;
+$foreground: $gray-900;
 
-$primary-text: #000;
-$primary-text-secondary: #666;
+// Dark Mode
+$dark-background: $gray-900;
+$dark-foreground: $gray-50;
+$dark-primary: $gray-50;
+$dark-primary-foreground: $gray-900;
+$dark-secondary: $gray-800;
+$dark-secondary-foreground: $gray-50;
+$dark-muted: $gray-800;
+$dark-muted-foreground: $gray-400;
+$dark-accent: $gray-800;
+$dark-accent-foreground: $gray-50;
+$dark-border: $gray-800;
+$dark-input: $gray-800;
+$dark-ring: $gray-300;
 
-$border-color: #666;
-$background-color: #fff;
-
-$primary-orange: #ffa500;
-$primary-red: #dc143c;
-$primary-green: #07e507;
-
-$primary-gray: #666;
-$primary-dark-gray: #333;
-$primary-light-gray: #ccc;
-
-// Typography System
-$font-family-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-$font-family-secondary: 'Georgia', 'Times New Roman', serif;
+// Modern Typography System
+$font-family-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+$font-family-mono: 'JetBrains Mono', 'Fira Code', 'Monaco', 'Consolas', 'Courier New', monospace;
 
 // Font Sizes
 $font-size-xs: 0.75rem;    // 12px
@@ -57,14 +83,38 @@ $spacing-xl: 2rem;      // 32px
 $spacing-2xl: 3rem;     // 48px
 $spacing-3xl: 4rem;     // 64px
 
-// Shadows
-$shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-$shadow-md:
-  0 4px 6px -1px rgb(0 0 0 / 0.1),
-  0 2px 4px -2px rgb(0 0 0 / 0.1);
-$shadow-lg:
-  0 10px 15px -3px rgb(0 0 0 / 0.1),
-  0 4px 6px -4px rgb(0 0 0 / 0.1);
+// Modern Shadows
+$shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+$shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+$shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+$shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+$shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+$shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+$shadow-inner: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+
+// Border Radius
+$radius-none: 0;
+$radius-sm: 0.125rem;   // 2px
+$radius-md: 0.375rem;   // 6px
+$radius-lg: 0.5rem;     // 8px
+$radius-xl: 0.75rem;    // 12px
+$radius-2xl: 1rem;      // 16px
+$radius-3xl: 1.5rem;    // 24px
+$radius-full: 9999px;
+
+// Transitions
+$transition-fast: 150ms ease;
+$transition-normal: 200ms ease;
+$transition-slow: 300ms ease;
+
+// Z-Index Scale
+$z-dropdown: 1000;
+$z-sticky: 1020;
+$z-fixed: 1030;
+$z-modal-backdrop: 1040;
+$z-modal: 1050;
+$z-popover: 1060;
+$z-tooltip: 1070;
 
 // Breakpoints
 $mobile: 640px;

@@ -8,7 +8,6 @@ import {
   Moon,
   CloudMoon,
   ChartColumnStacked,
-  Map,
   Settings2,
   User,
   Bookmark,
@@ -39,56 +38,68 @@ export const DesktopHeader = () => {
 
   return (
     <div className={`${styles.modal} ${darkMode ? styles.darkMode : ""}`}>
-      <div className={styles.headerContainer}>
-        <header className={styles.header}>
-          {/* Logo-Bereich - klickbar für Home */}
-          <Link to="/" className={styles.logo}>
+      {/* Desktop Sidebar Navigation */}
+      <aside className={styles.sidebar}>
+        {/* Logo-Bereich - klickbar für Home */}
+        <Link to="/" className={styles.logo}>
+          <img src={logoSrc} alt="Logo" className={styles.logoImg} />
+        </Link>
+
+        {/* Navigation */}
+        <nav className={styles.menu}>
+          <Link
+            to="/weather"
+            className={`${styles.menuButton} ${location.pathname === "/weather" ? styles.active : ""}`}
+          >
+            <CloudMoon size={20} />
+            Weather
+          </Link>
+          <Link
+            to="/compare"
+            className={`${styles.menuButton} ${location.pathname === "/compare" ? styles.active : ""}`}
+          >
+            <ChartColumnStacked size={20} />
+            Compare
+          </Link>
+          <Link
+            to="/settings"
+            className={`${styles.menuButton} ${location.pathname === "/settings" ? styles.active : ""}`}
+          >
+            <Settings2 size={20} />
+            Settings
+          </Link>
+        </nav>
+
+        {/* Bottom Section */}
+        <div className={styles.bottomSection}>
+          {/* Dark Mode Toggle */}
+          <button
+            className={styles.darkModeToggle}
+            onClick={toggleDarkMode}
+            title={darkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
+          >
+            {darkMode ? <Sun size={20} /> : <Moon size={20} />}
+            <span>{darkMode ? "Light" : "Dark"}</span>
+          </button>
+
+          {/* User Actions */}
+          <div className={styles.userActions}>
+            <Link to="/favorites" className={styles.actionButton} title="Favorites">
+              <Bookmark size={20} />
+            </Link>
+            <Link to="/user" className={styles.actionButton} title="User Profile">
+              <User size={20} />
+            </Link>
+          </div>
+        </div>
+      </aside>
+
+      {/* Mobile Header */}
+      <div className={styles.mobileHeader}>
+        <div className={styles.mobileHeaderContainer}>
+          <Link to="/" className={styles.mobileLogo}>
             <img src={logoSrc} alt="Logo" className={styles.logoImg} />
           </Link>
-
-          {/* Navigation */}
-          <nav className={styles.menu}>
-            <Link
-              to="/weather"
-              className={`${styles.menuButton} ${location.pathname === "/weather" ? styles.active : ""}`}
-            >
-              Weather
-            </Link>
-            <Link
-              to="/compare"
-              className={`${styles.menuButton} ${location.pathname === "/compare" ? styles.active : ""}`}
-            >
-              Compare
-            </Link>
-            <Link
-              to="/cities"
-              className={`${styles.menuButton} ${location.pathname === "/cities" ? styles.active : ""}`}
-            >
-              Cities
-            </Link>
-            <Link
-              to="/maps"
-              className={`${styles.menuButton} ${location.pathname === "/maps" ? styles.active : ""}`}
-            >
-              Maps
-            </Link>
-            <Link
-              to="/settings"
-              className={`${styles.menuButton} ${location.pathname === "/settings" ? styles.active : ""}`}
-            >
-              Settings
-            </Link>
-
-            {/* User-Bereich - klickbar für User-Profil */}
-            <Link to="/favorites" className={styles.favoritesIcon}>
-              <Bookmark size={28} />
-            </Link>
-
-            {/* User-Bereich - klickbar für User-Profil */}
-            <Link to="/user" className={styles.userIcon}>
-              <User size={28} />
-            </Link>
-          </nav>
 
           {/* Mobile Hamburger Button */}
           <button
@@ -97,9 +108,11 @@ export const DesktopHeader = () => {
           >
             <Menu size={24} />
           </button>
+        </div>
+      </div>
 
-          {/* Mobile Menu Overlay */}
-          {showMobileMenu && (
+      {/* Mobile Menu Overlay */}
+      {showMobileMenu && (
             <div
               className={`${styles.mobileMenuOverlay} ${mobileMenuClosing ? styles.mobileMenuOverlayClosing : ""}`}
               onClick={closeMobileMenu}
@@ -144,29 +157,7 @@ export const DesktopHeader = () => {
                   Compare
                 </button>
 
-                {/* Cities Button */}
-                <button
-                  className={styles.mobileSettingsButton}
-                  onClick={() => {
-                    navigate("/cities");
-                    closeMobileMenu();
-                  }}
-                >
-                  <Map size={20} />
-                  Cities
-                </button>
 
-                {/* Maps Button */}
-                <button
-                  className={styles.mobileSettingsButton}
-                  onClick={() => {
-                    navigate("/maps");
-                    closeMobileMenu();
-                  }}
-                >
-                  <Map size={20} />
-                  Maps
-                </button>
 
                 {/* Settings Button */}
                 <button
@@ -190,10 +181,8 @@ export const DesktopHeader = () => {
                 </button>
               </div>
             </div>
-          )}
-          {/* ------------------------------------------ Mobile Menu End ------------------------------------------ */}
-        </header>
-      </div>
+      )}
+      {/* ------------------------------------------ Mobile Menu End ------------------------------------------ */}
     </div>
   );
 };
