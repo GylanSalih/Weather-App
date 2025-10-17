@@ -69,3 +69,10 @@
   </tr>
 </table>
 <br />
+
+### 🚀 Installation & Start
+
+```bash
+npm install
+npm run build
+npm run dev
