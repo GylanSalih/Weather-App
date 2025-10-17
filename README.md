@@ -27,12 +27,12 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  </a>
-    <a href="https://github.com/GylanSalih/Weather-App">
+  <a href="https://github.com/GylanSalih/Weather-App">
     <img src="https://github.com/GylanSalih/Weather-App/blob/main/public/assets/img/showcase/settings.png" alt="Weather App Preview" width="300" style="margin-right: 10px; display: inline-block;">
   </a>
-    <a href="https://github.com/GylanSalih/Weather-App">
-    <img src="/assets/img/showcase/settings.png" alt="Weather App Preview" width="300" style="margin-right: 10px; display: inline-block;">
+  <a href="https://github.com/GylanSalih/Weather-App">
+    <img src="https://github.com/GylanSalih/Weather-App/blob/main/public/assets/img/showcase/home.png" alt="Weather App Preview" width="300" style="margin-right: 10px; display: inline-block;">
+  </a>
   <a href="https://github.com/GylanSalih/Weather-App">
     <img src="docs/images/showcase1.png" alt="Weather App Preview" width="300" style="margin-right: 10px; display: inline-block;">
   </a>
